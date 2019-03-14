@@ -153,25 +153,64 @@ iframe {
 }
 
 .container-login100 {
-  width: 100%;  
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-  background: #9053c7;
-  background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
-  background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
-  background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
+	width: 100%;
+	min-height: 100vh;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding-top: 120px;
+	padding-right: 120px;
+	padding-left: 120px;
+	padding-bottom: 120px;
+	background: #9053c7;
+	background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+	background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+	background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+	background: linear-gradient(-135deg, #c850c0, #4158d0);
 }
 
 .wrap-login100 {
+	width: 960px;
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-top: 50px;
+	padding-right: 130px;
+	padding-left: 95px;
+	padding-bottom: 50px;
+}
+
+.wrap-userReset100 {
+	width: 960px;
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-top: 50px;
+	padding-right: 130px;
+	padding-left: 95px;
+	padding-bottom: 50px;
+}
+
+.wrap-reg100 {
 	width: 960px;
 	background: #fff;
 	border-radius: 10px;
@@ -204,6 +243,12 @@ iframe {
 [  ]*/
 .login100-form {
   width: 290px;
+}
+.userReset100-form {
+  width: 450px;
+}
+.reg100-form {
+  width: 450px;
 }
 
 .login100-form-title {
