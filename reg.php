@@ -1,3 +1,7 @@
+
+<?php
+include('server.php')
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,10 +32,11 @@
 			<div class="wrap-reg100">
 				<span class="login100-form-title">Account Registration
 				  </span>
-				<form class="reg100-form validate-form">
+				<form action="reg.php" class="reg100-form validate-form" method="post">
+				<?php include('errors.php'); ?>
 				  
 					<div class="wrap-input100 validate-input" data-validate = "User Name ">
-						<input class="input100" type="text" name="user" placeholder="User Name">
+						<input class="input100" type="text" name="user" placeholder="User Name" require>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
@@ -39,7 +44,7 @@
 				  </div>
 				  
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" type="text" name="email" placeholder="Email" >
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -47,14 +52,14 @@
 				  </div>
 					
 				<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="pass" placeholder="Password" >
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>	
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Retype Password">
+					<div class="wrap-input100 validate-input"  data-validate = "Password is required">
+						<input class="input100" type="password" name="pass2" placeholder="Retype Password" >
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -62,7 +67,7 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" type="submit" name="reg_user">
 							Register
 						</button>
 					</div>

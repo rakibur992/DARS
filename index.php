@@ -1,3 +1,7 @@
+<?php
+include('server.php')
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +23,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--===============================================================================================-->
+<!--==============================================================================================-->
 </head>
 <body>
 	
@@ -31,15 +35,16 @@
 					<img src="images/source.gif" alt="IMG" width="320" height="299" class="img-fluid">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="index.php" method="post">
+				<?php include('errors.php'); ?>
 				  <span class="login100-form-title">Welcome To DARS<br>
 				  Login<br>
 				  </span>
-				  <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+				  <div class="wrap-input100 validate-input" data-validate = "User Name ">
+						<input class="input100" type="text" name="user" placeholder="User Name" require>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
+							<i class="fa fa-user" aria-hidden="true"></i>
 						</span>
 				  </div>
 
@@ -52,7 +57,7 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" name="login_user" type="submit">
 							Login
 						</button>
 					</div>
@@ -67,7 +72,7 @@
 					</div>
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="reg.html">
+						<a class="txt2" href="reg.php">
 							Create your Account
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
