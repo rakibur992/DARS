@@ -10,8 +10,7 @@
   	unset($_SESSION['username']);
   	header("location: index.php");
   }
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <head>
@@ -44,16 +43,7 @@
                         </button>
                         </form>
                         <ul class="nav pull-right">
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
-                                <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Item No. 1</a></li>
-                                    <li><a href="#">Item No. 2</a></li>
-                                    <li class="divider"></li>
-                                    <li class="nav-header">Example Header</li>
-                                    <li><a href="#">Any alternative link</a></li>
-                                </ul>
-                            </li>
+                           
                             <li><a href="#">Support </a></li>
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="images/user.png" class="nav-avatar" />
@@ -137,146 +127,64 @@
                                     <div class="span8">
                                         <div class="row-fluid">
                                             <div class="span12">
-                                             <table class="table table-striped table-responsive-md btn-table">
+                                            <table class="table table-striped table-responsive-md btn-table">
 
                                                 <!--Table-->
                                                 <table id="tablePreview" class="table table-hover">
                                                 <!--Table head-->
                                                   <thead>
                                                     <tr>
-                                                      <th>#</th>
-                                                      <th>First Name</th>
-                                                      <th>Last Name</th>
-                                                      <th>Username</th>
-                                                      <th>Visits</th>
-                                                      <th>Age</th>
-                                                      <th>Country</th>
-                                                      <th>First Name</th>
-                                                      <th>Last Name</th>
-                                                      <th>Username</th>
-                                                      <th>Visits</th>
-                                                      <th>Age</th>
-                                                      <th>Country</th>
+                                                        <th>University Name</th>
+                                                        <th>University Address</th>
+                                                        <th>University Contact</th>
+                                                        <th>University Email</th>
+                                                        <th>University Websites</th>
+                                                        
                                                     </tr>
                                                   </thead>
                                                   <!--Table head-->
                                                   <!--Table body-->
                                                   <tbody>
-                                                    <tr>
-                                                      <th scope="row">1</th>
-                                                      <td>Mark</td>
-                                                      <td>Otto</td>
-                                                      <td>@mdo</td>
-                                                      <td>Mark</td>
-                                                      <td>Otto</td>
-                                                      <td>@mdo</td>
-                                                      <td>Mark</td>
-                                                      <td>Otto</td>
-                                                      <td>@mdo</td>
-                                                      <td>Mark</td>
-                                                      <td>Otto</td>
-                                                      <td>@mdo</td>
-                                                    </tr>
-                                                    <tr>
-                                                      <th scope="row">2</th>
-                                                      <td>Jacob</td>
-                                                      <td>Thornton</td>
-                                                      <td>@fat</td>
-                                                      <td>Mark</td>
-                                                      <td>Otto</td>
-                                                      <td>@mdo</td>
-                                                      <td>Jacob</td>
-                                                      <td>Thornton</td>
-                                                      <td>@fat</td>
-                                                      <td>Mark</td>
-                                                      <td>Otto</td>
-                                                      <td>@mdo</td>
-                                                    </tr>
-                                                    <tr>
-                                                      <th scope="row">3</th>
-                                                      <td>Larry</td>
-                                                      <td>the Bird</td>
-                                                      <td>@twitter</td>
-                                                      <td>Mark</td>
-                                                      <td>Otto</td>
-                                                      <td>@mdo</td>
-                                                      <td>Jacob</td>
-                                                      <td>Thornton</td>
-                                                      <td>@fat</td>
-                                                      <td>Mark</td>
-                                                      <td>Otto</td>
-                                                      <td>@mdo</td>
-                                                    </tr>
+                                                    <?php
+
+                                                    $servername = "localhost";
+                                                    $username = "root";
+                                                    $password = "rakib";
+                                                    $dbname = "dars";
+
+                                                    // Create connection
+                                                    $conn = mysqli_connect($servername, $username, $password, $dbname);
+                                                    // Check connection
+                                                    if (!$conn) {
+                                                    die("Connection failed: " . mysqli_connect_error());
+                                                    }
+
+                                                    $sql = "SELECT  University_Name,University_Address,University_Contact,University_Email,University_Website FROM university WHERE UYear='2017'";
+                                                    $result = mysqli_query($conn, $sql);
+
+                                                    if (mysqli_num_rows($result) > 0) {
+                                                    // output data of each row
+                                                    while($row = mysqli_fetch_assoc($result)) {
+                                                    echo "<tr>
+                                                    <td>" . $row["University_Name"]. "</td>
+                                                    <td>" . $row["University_Address"] . "</td>
+                                                    <td>". $row["University_Contact"]."</td>
+                                                    <td>". $row["University_Email"]. "</td>
+                                                    <td> <a  href=" .$row["University_Website"]." >". $row["University_Website"].  "</td></a>
+
+                                                    </tr>";
+                                                    }
+
+                                                    echo "</table>";
+                                                    } else { echo "0 results"; }
+                                                    $conn->close();
+                                                    ?>
+   
                                                   </tbody>
                                                   <!--Table body-->
                                                 </table>
-                                                <!--Table-->                                               
 
-
-
-
-
-
-
-
-
-
-
-
-
-                                               <!--  <a href="#" class="btn-box small span4"><i class="icon-envelope"></i><b>Messages</b>
-                                                </a><a href="#" class="btn-box small span4"><i class="icon-group"></i><b>Clients</b>
-                                                </a><a href="#" class="btn-box small span4"><i class="icon-exchange"></i><b>Expenses</b>
-                                                </a> -->
-                                            </div>
-                                        </div>
-                                        <div class="row-fluid">
-                                            <div class="span12">
-                                               <!--  <a href="#" class="btn-box small span4"><i class="icon-save"></i><b>Total Sales</b>
-                                                </a><a href="#" class="btn-box small span4"><i class="icon-bullhorn"></i><b>Social Feed</b>
-                                                </a><a href="#" class="btn-box small span4"><i class="icon-sort-down"></i><b>Bounce
-                                                    Rate</b> </a> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                  <!--   <ul class="widget widget-usage unstyled span4">
-                                        <li>
-                                            <p>
-                                                <strong>Windows 8</strong> <span class="pull-right small muted">78%</span>
-                                            </p>
-                                            <div class="progress tight">
-                                                <div class="bar" style="width: 78%;">
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <strong>Mac</strong> <span class="pull-right small muted">56%</span>
-                                            </p>
-                                            <div class="progress tight">
-                                                <div class="bar bar-success" style="width: 56%;">
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <strong>Linux</strong> <span class="pull-right small muted">44%</span>
-                                            </p>
-                                            <div class="progress tight">
-                                                <div class="bar bar-warning" style="width: 44%;">
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                <strong>iPhone</strong> <span class="pull-right small muted">67%</span>
-                                            </p>
-                                            <div class="progress tight">
-                                                <div class="bar bar-danger" style="width: 67%;">
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul> -->
+                                                
                                 </div>
                             </div>
                             <!--/#btn-controls-->
@@ -1343,7 +1251,7 @@
         <!--/.wrapper-->
         <div class="footer">
             <div class="container">
-                <b class="copyright">&copy; 2014 Edmin - EGrappler.com </b>All rights reserved.
+                <b class="copyright">&copy; 2019 DARS  </b>All rights reserved.
             </div>
         </div>
         <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
@@ -1355,4 +1263,3 @@
         <script src="scripts/common.js" type="text/javascript"></script>
       
     </body>
-</html>
