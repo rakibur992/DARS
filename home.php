@@ -10,7 +10,8 @@
       unset($_SESSION['username']);
       header("location: index.php");
   }
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <head>
@@ -71,7 +72,7 @@
                     <div class="span3">
                         <div class="sidebar">
                             <ul class="widget widget-menu unstyled">
-                                <li class="active"><a href="index.html"><i class="menu-icon icon-dashboard"></i>Dashboard
+                                <li class="active"><a href="home.php"><i class="menu-icon icon-dashboard"></i>Dashboard
                                 </a></li>
 
 
@@ -79,7 +80,7 @@
 
                                 <li><a href="form.html"><i class="menu-icon icon-paste"></i>Forms </a></li>
                                 <li><a href="table.html"><i class="menu-icon icon-table"></i>Tables </a></li>
-                                <li><a href="charts.html"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>
+                                <li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>
                             </ul>
                             <!--/.widget-nav-->
                             <ul class="widget widget-menu unstyled">
@@ -95,7 +96,7 @@
                     <div class="span9">
                         <div class="content">
                             <div class="btn-controls">
-                                <div class="btn-box-row row-fluid" width=1121px   height= 2928px>
+                                <div class="btn-box-row row-fluid" >
                                     <a href="#" class="btn-box big span4"><i class=" icon-random"></i><b>65%</b>
                                         <p class="text-muted">
                                             Growth</p>
@@ -132,7 +133,7 @@
                                                     $servername = "localhost";
                                                     $username = "root";
                                                     $password = "rakib";
-                                                    $dbname = "dars";
+                                                    $dbname = "dars2.0";
 
                                                     // Create connection
                                                     $conn = mysqli_connect($servername, $username, $password, $dbname);
