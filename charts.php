@@ -11,41 +11,10 @@
       header("location: index.php");
   }
 
-  $servername = "localhost";
-  $username = "root";
-  $password = "rakib";
-  $dbname = "dars2.0";
+  include('chart_gen.php');
 
-  // Create connection
-  $conn = mysqli_connect($servername, $username, $password, $dbname);
-  // Check connection
-  if (!$conn) {
-      die("Connection failed: " . mysqli_connect_error());
-  }
-
-  $sql = "SELECT  University_Name,Total_Student_Studying FROM university u,student_distribution s WHERE UYear='2017' AND u.Uid_PK=s.uID_PK AND u.UYear=s.year_PK ";
-  $result = mysqli_query($conn, $sql);
-
-  if (mysqli_num_rows($result) > 0) {
-
-      // output data of each row
-      $i=0;
-      while ($row = mysqli_fetch_assoc($result)) {
-          $data[$i]=$row["University_Name"] ;
-          $data2[$i]=$row["Total_Student_Studying"] ;
-          $i+=1;
-      }
-
-      // for ($i=0; $i <mysqli_num_rows($result) ; $i++) {
-      //     if ($i==0) {
-      //         echo $data[$i] ;
-      //     } else {
-      //         echo ",".$data[$i] ;
-      //     }
-      // }
-  }
-  $conn->close();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,15 +91,14 @@
                         </ul>
                         <!--/.widget-nav-->
                         <ul class="widget widget-menu unstyled">
-                               <
-                                <li><a href="form.html"><i class="menu-icon icon-paste"></i>Forms </a></li>
-                                <li><a href="table.html"><i class="menu-icon icon-table"></i>Tables </a></li>
+                                <li><a href="form.php"><i class="menu-icon icon-paste"></i>Forms </a></li>
+                                <li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li>
                                 <li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>
                             </ul>
                         <!--/.widget-nav-->
                         <ul class="widget widget-menu unstyled">
 
-                            <li><a href="#"><i class="menu-icon icon-signout"></i>Logout </a></li>
+                            <li><a href="index.php"><i class="menu-icon icon-signout"></i>Logout </a></li>
                         </ul>
                     </div>
                     <!--/.sidebar-->

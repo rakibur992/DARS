@@ -21,16 +21,8 @@ if (mysqli_num_rows($result) > 0) {
     $i=0;
     while ($row = mysqli_fetch_assoc($result)) {
         $data[$i]=$row["University_Name"] ;
+        $data2[$i]=$row["Total_Student_Studying"] ;
         $i+=1;
     }
-    // for ($i=0; $i <mysqli_num_rows($result) ; $i++) {
-    //     if ($i==0) {
-    //         echo $data[$i] ;
-    //     } else {
-    //         echo ",".$data[$i] ;
-    //     }
-    // }
-
-    print json_encode($data);
 }
 $conn->close();
