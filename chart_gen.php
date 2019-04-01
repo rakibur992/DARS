@@ -12,6 +12,8 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+//generating bar chart
+
 $sql1 = "SELECT  University_Name,Total_Student_Studying FROM university u,student_distribution s WHERE UYear='2017' AND u.Uid_PK=s.uID_PK AND u.UYear=s.year_PK ";
 $result = mysqli_query($conn, $sql1);
 
@@ -25,6 +27,7 @@ if (mysqli_num_rows($result) > 0) {
         $i+=1;
     }
 }
+//generating doughnut chart
 
 $sql2 = "SELECT  Total_Expense_Education,Expense_Research,Expense_Salary,
 Expense_Scholarship,Expense_Transport,Expense_Electricity,
@@ -48,6 +51,35 @@ if (mysqli_num_rows($result) > 0) {
     $data_pie_exp[8]=$row["Expense_per_student"] ;
     $data_pie_exp[9]=$row["Expense_Infrustructure_maintainence"] ;
 }
+//generating line chart
+
+  $sql3 = "SELECT  Admitted_Student,u.UYear
+  FROM university u,student_distribution sd
+  WHERE  u.Uid_PK=sd.uID_PK
+  AND u.UYear=sd.year_PK
+  AND u.University_Name='North South University'";
+
+$result = mysqli_query($conn, $sql3);
+$i=0;
+while ($row = mysqli_fetch_assoc($result)) {
+    $u1_data[$i]=$row["Admitted_Student"];
+    $u1_year[$i]=$row["UYear"];
+    $i+=1;
+}
+
+$sql4 = "SELECT  Admitted_Student
+FROM university u,student_distribution sd
+WHERE  u.Uid_PK=sd.uID_PK
+AND u.UYear=sd.year_PK
+AND u.University_Name='Bangladesh University of Business and Technology'";
+
+$result = mysqli_query($conn, $sql4);
+$i=0;
+while ($row = mysqli_fetch_assoc($result)) {
+    $u2_data[$i]=$row["Admitted_Student"];
+    $i+=1;
+}
+
 
 
 
