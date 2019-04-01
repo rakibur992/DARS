@@ -91,7 +91,7 @@
 
             <ul class="widget widget-menu unstyled">
               <li class="active">
-                <a href="index.html">
+                <a href="home.php">
                   <i class="menu-icon icon-dashboard"></i>
                   Dashboard
                 </a>

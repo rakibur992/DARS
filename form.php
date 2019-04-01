@@ -92,7 +92,7 @@
 
 						<ul class="widget widget-menu unstyled">
 							<li class="active">
-								<a href="index.html">
+								<a href="home.php">
 									<i class="menu-icon icon-dashboard"></i>
 									Dashboard
 								</a>
@@ -102,8 +102,7 @@
 						<!--/.widget-nav-->
 
 						<ul class="widget widget-menu unstyled">
-							<!--  <li><a href="ui-button-icon.html"><i class="menu-icon icon-bold"></i> Buttons </a></li>
-                                <li><a href="ui-typography.html"><i class="menu-icon icon-book"></i>Typography </a></li> -->
+
 							<li><a href="form.php"><i class="menu-icon icon-paste"></i>Forms </a></li>
 							<li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li>
 							<li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>

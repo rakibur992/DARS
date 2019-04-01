@@ -115,49 +115,47 @@
                                  <canvas id="myChart" width="400" height="400"></canvas>
                                  <script>
 
-
-
                                  var ctx = document.getElementById('myChart').getContext('2d');
                                  var myChart = new Chart(ctx, {
                                      type: 'bar',
                                      data: {
-                                         labels: <?php print json_encode($data); ?>,
+                                         labels: <?php print json_encode($data_bar); ?>,
                                          datasets: [{
-                                             label: ["# of Votes"],
+                                             label: ["Number of Student"],
 
-                                             data: <?php print json_encode($data2); ?>,
+                                             data: <?php print json_encode($data2_bar); ?>,
                                              backgroundColor: [
-                                                 'rgba(255, 99, 132, 0.2)',
-                                                 'rgba(54, 162, 235, 0.2)',
-                                                 'rgba(255, 206, 86, 0.2)',
-                                                 'rgba(75, 192, 192, 0.2)',
-                                                 'rgba(153, 102, 255, 0.2)',
-                                                 'rgba(255, 159, 64, 0.2)',
-                                                 'rgba(255, 99, 132, 0.2)',
-                                                 'rgba(54, 162, 235, 0.2)',
-                                                 'rgba(255, 206, 86, 0.2)',
-                                                 'rgba(75, 192, 192, 0.2)',
-                                                 'rgba(153, 102, 255, 0.2)',
-                                                 'rgba(255, 159, 64, 0.2)',
-                                                 'rgba(255, 99, 132, 0.2)',
-                                                 'rgba(54, 162, 235, 0.2)',
-                                                 'rgba(255, 206, 86, 0.2)',
-                                                 'rgba(75, 192, 192, 0.2)',
-                                                 'rgba(153, 102, 255, 0.2)',
-                                                 'rgba(255, 159, 64, 0.2)',
-                                                 'rgba(255, 99, 132, 0.2)',
-                                                 'rgba(54, 162, 235, 0.2)',
-                                                 'rgba(255, 206, 86, 0.2)',
-                                                 'rgba(75, 192, 192, 0.2)',
-                                                 'rgba(153, 102, 255, 0.2)',
-                                                 'rgba(255, 159, 64, 0.2)',
-                                                 'rgba(255, 99, 132, 0.2)',
-                                                 'rgba(54, 162, 235, 0.2)',
-                                                 'rgba(255, 206, 86, 0.2)',
-                                                 'rgba(75, 192, 192, 0.2)',
-                                                 'rgba(153, 102, 255, 0.2)',
-                                                 'rgba(255, 159, 64, 0.2)',
-                                                 'rgba(255, 159, 64, 0.2)'
+                                                 'rgba(255, 99, 132, 0.6)',
+                                                 'rgba(54, 162, 235, 0.6)',
+                                                 'rgba(255, 206, 86, 0.6)',
+                                                 'rgba(75, 192, 192, 0.6)',
+                                                 'rgba(153, 102, 255, 0.6)',
+                                                 'rgba(255, 159, 64, 0.6)',
+                                                 'rgba(255, 99, 132, 0.6)',
+                                                 'rgba(54, 162, 235, 0.6)',
+                                                 'rgba(255, 206, 86, 0.6)',
+                                                 'rgba(75, 192, 192, 0.6)',
+                                                 'rgba(153, 102, 255, 0.6)',
+                                                 'rgba(255, 159, 64, 0.6)',
+                                                 'rgba(255, 99, 132, 0.6)',
+                                                 'rgba(54, 162, 235, 0.6)',
+                                                 'rgba(255, 206, 86, 0.6)',
+                                                 'rgba(75, 192, 192, 0.6)',
+                                                 'rgba(153, 102, 255, 0.6)',
+                                                 'rgba(255, 159, 64, 0.6)',
+                                                 'rgba(255, 99, 132, 0.6)',
+                                                 'rgba(54, 162, 235, 0.6)',
+                                                 'rgba(255, 206, 86, 0.6)',
+                                                 'rgba(75, 192, 192, 0.6)',
+                                                 'rgba(153, 102, 255, 0.6)',
+                                                 'rgba(255, 159, 64, 0.6)',
+                                                 'rgba(255, 99, 132, 0.6)',
+                                                 'rgba(54, 162, 235, 0.6)',
+                                                 'rgba(255, 206, 86, 0.6)',
+                                                 'rgba(75, 192, 192, 0.6)',
+                                                 'rgba(153, 102, 255, 0.6)',
+                                                 'rgba(255, 159, 64, 0.6)',
+                                                 'rgba(255, 159, 64, 0.6)'
 
                                              ],
                                              borderColor: [
@@ -244,6 +242,9 @@
                             <div class="module-body">
                                 <div class="chart pie donut">
                                     <div id="pie-donut" class="graph">
+
+
+
                                     </div>
                                 </div>
                             </div>
@@ -255,14 +256,54 @@
                                 <h3>
                                     Pie - Donut & Interactive</h3>
                             </div>
-                            <div class="module-body">
-                                <div class="chart pie donut interactive">
-                                    <div id="pie-interactive" class="graph">
-                                    </div>
-                                    <div id="hover">
-                                    </div>
-                                </div>
-                            </div>
+                            <canvas id="myPieChart" width="400" height="400"></canvas>
+                            <script>
+                            var ctx = document.getElementById('myPieChart').getContext('2d');
+                            var myPieChart = new Chart(ctx, {
+                                type: 'doughnut',
+                                data: {
+                                    labels: ['Total Education','Research','Salary','Scholarship'
+                                              ,'Transport'
+                                              ,'Electricity','Medical'
+                                              ,'Misc'
+                                              ,'Per Student'
+                                              ,'Infrustructure&Maintainence'],
+                                    datasets: [{
+
+                                        data: <?php print json_encode($data_pie_exp); ?>,
+                                        backgroundColor: [
+                                          'rgba(250, 109, 4,0.6)',
+                                          'rgba(23, 33, 229, 0.6)',
+                                          'rgba(127, 218, 59, 0.6)',
+                                          'rgba(116, 237, 59, 0.6)',
+                                          'rgba(59, 237, 159, 0.6)',
+                                          'rgba(59, 232, 237, 0.6)',
+                                          'rgba(116, 59, 237, 0.6)',
+                                          'rgba(213, 59, 237, 0.6)',
+                                          'rgba(255, 106, 106, 0.6)',
+                                          'rgba(237, 59, 145, 0.6)'
+
+                                        ],
+                                        borderColor: [
+                                          'rgba(250, 109, 4,1)',
+                                          'rgba(23, 33, 229,  1)',
+                                          'rgba(127, 218, 59, 1)',
+                                          'rgba(116, 237, 59, 1)',
+                                          'rgba(59, 237, 159, 1)',
+                                          'rgba(59, 232, 237 1)',
+                                          'rgba(116, 59, 237, 1)',
+                                          'rgba(213, 59, 237, 1)',
+                                          'rgba(255, 106, 10, 1)',
+                                          'rgba(237, 59, 145,1)',
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+
+                                }
+                            });
+                            </script>
                         </div>
                         <!--/.module-->
                     </div>
