@@ -125,7 +125,7 @@
 
                             </div>
                                <!--first chart-->
-                                 <canvas id="myChart" width="300" height="400"></canvas>
+                                 <canvas id="myChart" width="400" height="400"></canvas>
                                  <script>
 
                                  var ctx = document.getElementById('myChart').getContext('2d');
@@ -288,7 +288,7 @@
                         <br />
                         <div class="module">
                             <div class="module-head">
-                                <h3>Income/Expense over the years</h3>
+                                <h2>Income/Expense over the years</h2>
                                 <div>
                                <form action="chart_gen.php" method="post">
                                      <label>Select University name </label>
@@ -337,33 +337,83 @@
                                 }
                             });
                             </script>
-
-
-
-
-
-
-
-
-
                         </div>
                         <!--/.module-->
                         <br />
                         <div class="module">
                             <div class="module-head">
-                                <h3>
-                                    Pie - Donut</h3>
-                            </div>
-                            <div class="module-body">
-                                <div class="chart pie donut">
-                                    <div id="pie-donut" class="graph">
-
-
-
-                                    </div>
-                                </div>
-                            </div>
+                                <h1>Student Distribution</h1>
+                                <div>
+                               <form action="chart_gen.php" method="post">
+                                     <label>Select Year </label>
+                                     <select name ="sel1" onchange="this.form.submit">
+                                    <?php echo $option2; ?>
+                                     </select>
+                            </form>
+                            <div class="form2">
+                           <form action="chart_gen.php" method="post">
+                                 <label>Select University </label>
+                                 <select name ="sel2" onchange="this.form.submit">
+                                <?php echo $option1; ?>
+                                 </select>
+                        </form>
                         </div>
+                            </div>
+                            </div>
+
+
+
+                            <canvas id="myPieChart1" width="400" height="250"></canvas>
+                            <script>
+                            var ctx = document.getElementById('myPieChart1').getContext('2d');
+                            var myPieChart = new Chart(ctx, {
+                                type: 'pie',
+                                data: {
+                                    labels: ['Female Student','Undergraduate pass'
+                                              ,'Undergraduate Hons','Undergraduate Passed Student Normal'
+                                              ,'Undergraduate Passed Student Hons','Undergraduate Passed Student Eng tech'
+                                              ,'Graduate Passed Student Normal','Graduate Passed Student Eng tech'
+                                              ,'Student Poverty'
+                                              ,'Student Freedom Fighter'],
+                                    datasets: [{
+
+                                        data: <?php print json_encode($data_pie_exp1); ?>,
+                                        backgroundColor: [
+                                          'rgba(250, 109, 4,0.6)',
+                                          'rgba(23, 33, 229, 0.6)',
+                                          'rgba(127, 218, 59, 0.6)',
+                                          'rgba(202, 158, 6, 0.6)',
+                                          'rgba(59, 237, 159, 0.6)',
+                                          'rgba(59, 232, 237, 0.6)',
+                                          'rgba(116, 59, 237, 0.6)',
+                                          'rgba(213, 59, 237, 0.6)',
+                                          'rgba(255, 106, 106, 0.6)',
+                                          'rgba(237, 59, 145, 0.6)'
+
+                                        ],
+                                        borderColor: [
+                                          'rgba(250, 109, 4,1)',
+                                          'rgba(23, 33, 229,  1)',
+                                          'rgba(127, 218, 59, 1)',
+                                          'rgba(202, 158, 6, 1)',
+                                          'rgba(59, 237, 159, 1)',
+                                          'rgba(59, 232, 237 1)',
+                                          'rgba(116, 59, 237, 1)',
+                                          'rgba(213, 59, 237, 1)',
+                                          'rgba(255, 106, 10, 1)',
+                                          'rgba(237, 59, 145,1)',
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+
+                                }
+                            });
+                            </script>
+                        </div>
+
+
                         <!--/.module-->
                         <br />
                         <div class="module">
@@ -438,15 +488,152 @@
                             });
                             </script>
                         </div>
+
                         <!--/.module-->
+                        <br />
+                        <div class="module">
+                            <div class="module-head">
+                                <h3>
+                                    Pie - Default</h3>
+                            </div>
+
+                            // code
+
+                        </div>
+
+                        <!--/.module-->
+                        <br />
+                        <div class="module">
+                            <div class="module-head">
+                                <h3>
+                                    Pie - Default</h3>
+                            </div>
+
+                            // code
+
+                        </div>
+
+                        <!--/.module-->
+                        <br />
+                        <div class="module">
+                            <div class="module-head">
+                                <h3>
+                                    Pie - Default</h3>
+                            </div>
+
+                            // code
+
+                        </div>
+
+                        <!--/.module-->
+                        <br />
+                        <div class="module">
+                            <div class="module-head">
+                                <h3>
+                                    Pie - Default</h3>
+                            </div>
+
+                            // code
+
+                        </div>
+
+                        <!--/.module-->
+                        <br />
+                        <div class="module">
+                            <div class="module-head">
+                                <h3>
+                                    Pie - Default</h3>
+                            </div>
+
+                            // code
+
+                        </div>
+
+                        <!--/.module-->
+                        <br />
+                        <div class="module">
+                            <div class="module-head">
+                                <h3>
+                                    Pie - Default</h3>
+                            </div>
+
+                            // code
+
+                        </div>
+
+                        <!--/.module-->
+                        <br />
+                        <div class="module">
+                            <div class="module-head">
+                                <h3>
+                                    Pie - Default</h3>
+                            </div>
+
+                            // code
+
+                        </div>
+
+                        <!--/.module-->
+
                     </div>
                     <!--/.content-->
                 </div>
                 <!--/.span9-->
             </div>
         </div>
-        <!--/.container-->
-    </div>
+        <canvas id="myPieChart1" width="400" height="250"></canvas>
+        <script>
+        var ctx = document.getElementById('myPieChart').getContext('2d');
+        var myPieChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Total Education','Research','Salary','Scholarship'
+                          ,'Transport'
+                          ,'Electricity','Medical'
+                          ,'Misc'
+                          ,'Per Student'
+                          ,'Infrustructure&Maintainence'],
+                datasets: [{
+
+                    data: <?php print json_encode($data_pie_exp); ?>,
+                    backgroundColor: [
+                      'rgba(250, 109, 4,0.6)',
+                      'rgba(23, 33, 229, 0.6)',
+                      'rgba(127, 218, 59, 0.6)',
+                      'rgba(202, 158, 6, 0.6)',
+                      'rgba(59, 237, 159, 0.6)',
+                      'rgba(59, 232, 237, 0.6)',
+                      'rgba(116, 59, 237, 0.6)',
+                      'rgba(213, 59, 237, 0.6)',
+                      'rgba(255, 106, 106, 0.6)',
+                      'rgba(237, 59, 145, 0.6)'
+
+                    ],
+                    borderColor: [
+                      'rgba(250, 109, 4,1)',
+                      'rgba(23, 33, 229,  1)',
+                      'rgba(127, 218, 59, 1)',
+                      'rgba(202, 158, 6, 1)',
+                      'rgba(59, 237, 159, 1)',
+                      'rgba(59, 232, 237 1)',
+                      'rgba(116, 59, 237, 1)',
+                      'rgba(213, 59, 237, 1)',
+                      'rgba(255, 106, 10, 1)',
+                      'rgba(237, 59, 145,1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+
+            }
+        });
+        </script>
+
+
+
+
+
     <!--/.wrapper-->
     <div class="footer">
         <div class="container">
