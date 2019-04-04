@@ -96,20 +96,9 @@
                     <div class="span9">
                         <div class="content">
                             <div class="btn-controls">
-                                <div class="btn-box-row row-fluid" >
-                                    <a href="#" class="btn-box big span4"><i class=" icon-random"></i><b>65%</b>
-                                        <p class="text-muted">
-                                            Growth</p>
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-user"></i><b>15</b>
-                                        <p class="text-muted">
-                                            New Users</p>
-                                    </a><a href="#" class="btn-box big span4"><i class="icon-money"></i><b>15,152</b>
-                                        <p class="text-muted">
-                                            Profit</p>
-                                    </a>
-                                </div>
+
                                 <div class="btn-box-row row-fluid">
-                                    <div class="span8">
+
                                         <div class="row-fluid">
                                             <div class="span12">
 
@@ -149,17 +138,15 @@
                                                     if (mysqli_num_rows($result) > 0) {
                                                         // output data of each row
                                                         while ($row = mysqli_fetch_assoc($result)) {
-                                                            echo "<tr>
-                                                    <td>" . $row["University_Name"]. "</td>
-                                                    <td>" . $row["University_Address"] . "</td>
-                                                    <td>". $row["University_Contact"]."</td>
-                                                    <td>". $row["University_Email"]. "</td>
-                                                    <td> <a  href=" .$row["University_Website"]." >". $row["University_Website"].  "</td></a>
+                                                            echo '<tr>'
+                                                    .'<td>' . $row["University_Name"]. '</td>'
+                                                    .'<td>' . $row["University_Address"] . '</td>'
+                                                    .'<td>'. $row["University_Contact"].'</td>'
+                                                    .'<td>'. $row["University_Email"]. '</td>'
+                                                    .'<td><a  href=https://' .$row["University_Website"].' target="_blank" >'. $row["University_Website"].  '</td></a>'
 
-                                                    </tr>";
+                                                    .'</tr>';
                                                         }
-
-                                                        echo "</table>";
                                                     } else {
                                                         echo "0 results";
                                                     }
@@ -168,109 +155,15 @@
 
                                                   </tbody>
 
-
-
-
+                                                  </table>
 
 
                                 </div>
                             </div>
                             <!--/#btn-controls-->
-                            <div class="module">
-                                <div class="module-head">
-                                    <h3>
-                                        Profit Chart</h3>
-                                </div>
-                                <div class="module-body">
-                                    <div class="chart inline-legend grid">
-                                        <div id="placeholder2" class="graph" style="height: 500px">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <!--/.module-->
-                            <div class="module hide">
-                                <div class="module-head">
-                                    <h3>
-                                        Adjust Budget Range</h3>
-                                </div>
-                                <div class="module-body">
-                                    <div class="form-inline clearfix">
-                                        <a href="#" class="btn pull-right">Update</a>
-                                        <label for="amount">
-                                            Price range:</label>
-                                        &nbsp;
-                                        <input type="text" id="amount" class="input-" />
-                                    </div>
-                                    <hr />
-                                    <div class="slider-range">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="module">
-                                <div class="module-head">
-                                    <h3>
-                                        DataTables</h3>
-                                </div>
-                                <div class="module-body table">
-                                    <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display"
-                                        width="100%">
-                                        <thead>
-                                          <tr>
-                                              <th>University Name</th>
-                                              <th>University Address</th>
-                                              <th>University Contact</th>
-                                              <th>University Email</th>
-                                              <th>University Websites</th>
-
-                                          </tr>
-                                        </thead>
-                                        <!--Table head-->
-                                        <!--Table body-->
-                                        <tbody>
-                                          <?php
-
-                                          $servername = "localhost";
-                                          $username = "root";
-                                          $password = "rakib";
-                                          $dbname = "dars";
-
-                                          // Create connection
-                                          $conn = mysqli_connect($servername, $username, $password, $dbname);
-                                          // Check connection
-                                          if (!$conn) {
-                                              die("Connection failed: " . mysqli_connect_error());
-                                          }
-
-                                          $sql = "SELECT  University_Name,University_Address,University_Contact,University_Email,University_Website FROM university WHERE UYear='2017'";
-                                          $result = mysqli_query($conn, $sql);
-
-                                          if (mysqli_num_rows($result) > 0) {
-                                              // output data of each row
-                                              while ($row = mysqli_fetch_assoc($result)) {
-                                                  echo "<tr>
-                                          <td>" . $row["University_Name"]. "</td>
-                                          <td>" . $row["University_Address"] . "</td>
-                                          <td>". $row["University_Contact"]."</td>
-                                          <td>". $row["University_Email"]. "</td>
-                                          <td> <a  href=" .$row["University_Website"]." >". $row["University_Website"].  "</td></a>
-
-                                          </tr>";
-                                              }
-
-                                              echo "</table>";
-                                          } else {
-                                              echo "0 results";
-                                          }
-                                          $conn->close();
-                                          ?>
-
-                                        </tbody>
-
-                                </div>
-                            </div>
-                            <!--/.module-->
-                        </div>
+                        <
                         <!--/.content-->
                     </div>
                     <!--/.span9-->

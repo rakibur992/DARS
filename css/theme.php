@@ -6,11 +6,15 @@ All Rights Reserved.
 
 */
 
+<?php
+    header('Content-type: text/css;')
+?>
+
 body {
 	font-size: 15px;
 	font-family: 'Open Sans', Arial, sans-serif;
 	background: #fff;
-	color: #000;
+	color: ##000;
 }
 h1, h2, h3, h4, h5, h6 {
 	color: #333;
@@ -1023,6 +1027,7 @@ background-color: #f6f6f6;
 border-color: #e9e9e9;
 
 
+
 	padding: 10px 15px;
 border-bottom: 1px solid transparent;
 border-top-right-radius: 3px;
@@ -1043,6 +1048,56 @@ border-top-left-radius: 3px;
 	padding: 15px 0;
 	margin: 0 15px
 }
+
+.form{
+	padding-top: 10px;
+	width: 220px
+}
+
+.form2{
+	left: 286px;
+	top: -64px;
+	position: relative;
+
+}
+
+.form3{
+	position: relative;
+}
+
+.form3{
+	position: absolute;
+	right: 250px;
+	top: 2445px;
+	bottom: 12px;
+
+}
+
+.button{
+	position: relative;
+}
+
+.button{
+	position: absolute;
+	right: 0px;
+	left: 230px;
+	bottom: 50px;
+	top: 40px;
+}
+
+.button2{
+	position: relative;
+}
+
+.button2{
+	position: absolute;
+	right: 30px;
+	left: 230px;
+	top: 36px;
+	bottom: 10px;
+}
+
+
 .module-body {
 	padding: 15px
 }
@@ -1117,7 +1172,7 @@ border-top-left-radius: 3px;
 	padding: 0
 }
 .stream.new-update a, .stream.load-more a {
-	background: #background: #f7f7f7;
+	background: #background: #f7f7f7;;
 
 	color: #555;
 	font-weight: 600;
@@ -1699,5 +1754,3 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', end
 	border-radius: 0 0 3px 0
 }
 @media(max-width:767px){body{padding:0!important}.wrapper{padding:20px 15px}}
-
-

@@ -14,19 +14,21 @@ if (!$conn) {
 
 //generating bar chart
 
-$sql1 = "SELECT  University_Name,Total_Student_Studying FROM university u,student_distribution s WHERE UYear='2017' AND u.Uid_PK=s.uID_PK AND u.UYear=s.year_PK ";
-$result = mysqli_query($conn, $sql1);
+    $sql1 = "SELECT  University_Name,Total_Student_Studying FROM university u,student_distribution s WHERE UYear='2017' AND u.Uid_PK=s.uID_PK AND u.UYear=s.year_PK ";
+    $result = mysqli_query($conn, $sql1);
 
-if (mysqli_num_rows($result) > 0) {
+    if (mysqli_num_rows($result) > 0) {
 
-    // output data of each row
-    $i=0;
-    while ($row = mysqli_fetch_assoc($result)) {
-        $data_bar[$i]=$row["University_Name"] ;
-        $data2_bar[$i]=$row["Total_Student_Studying"] ;
-        $i+=1;
+      // output data of each row
+        $i=0;
+        while ($row = mysqli_fetch_assoc($result)) {
+            $data_bar[$i]=$row["University_Name"] ;
+            $data2_bar[$i]=$row["Total_Student_Studying"] ;
+            $i+=1;
+        }
     }
-}
+
+
 //generating doughnut chart
 
 $sql2 = "SELECT  Total_Expense_Education,Expense_Research,Expense_Salary,
@@ -80,8 +82,23 @@ while ($row = mysqli_fetch_assoc($result)) {
     $i+=1;
 }
 
+// Generating Expense/Income Chart
 
 
+  $sql5 = "SELECT  Total_Income_own,u.UYear,Total_Expense
+  FROM university u,finances f
+  WHERE  u.Uid_PK=f.UiD_pk
+  AND u.UYear=f.year_pk
+  AND u.University_Name='North South University'";
+
+$result = mysqli_query($conn, $sql5);
+$i=0;
+while ($row = mysqli_fetch_assoc($result)) {
+    $u_income[$i]=$row["Total_Income_own"];
+    $u5_year[$i]=$row["UYear"];
+    $u_expense[$i]=$row["Total_Expense"];
+    $i+=1;
+}
 
 
 

@@ -12,6 +12,7 @@
   }
 
   include('chart_gen.php');
+  include('combox.php');
 
 ?>
 
@@ -23,7 +24,7 @@
     <title>Charts</title>
     <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link type="text/css" href="css/theme.css" rel="stylesheet">
+    <link type="text/css" href="css/theme.php" rel="stylesheet">
     <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
     <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
         rel='stylesheet'>
@@ -110,9 +111,21 @@
                             <div class="module-head">
                                 <h2>Total Number of Student Studying </h2>
 
+                                <div>
+                               <form action="chart_gen.php" method="post">
+                               <fieldset class="form">
+                                     <label>Select Year </label>
+                                     <select name ="sel1" onchange="this.form.submit">
+                                    <?php echo $option2; ?>
+                                     </select>
+                               </fieldset>
+
+                            </form>
+                            </div>
+
                             </div>
                                <!--first chart-->
-                                 <canvas id="myChart" width="400" height="400"></canvas>
+                                 <canvas id="myChart" width="300" height="400"></canvas>
                                  <script>
 
                                  var ctx = document.getElementById('myChart').getContext('2d');
@@ -208,8 +221,24 @@
                         <br />
                         <div class="module">
                             <div class="module-head">
-                                <h2>
-                                    Growth of Admitted Student  </h2>
+                                <h2>Growth of Admitted Student  </h2>
+                                <div>
+                               <form action="chart_gen.php" method="post">
+                                     <label>Select Year </label>
+                                     <select name ="sel1" onchange="this.form.submit">
+                                    <?php echo $option2; ?>
+                                     </select>
+                            </form>
+                            </div>
+
+                            <div class="form2">
+                           <form action="chart_gen.php" method="post">
+                                 <label>Select University </label>
+                                 <select name ="sel2" onchange="this.form.submit">
+                                <?php echo $option1; ?>
+                                 </select>
+                        </form>
+                        </div>
                             </div>
 
 
@@ -259,15 +288,64 @@
                         <br />
                         <div class="module">
                             <div class="module-head">
-                                <h3>
-                                    Pie - Default</h3>
+                                <h3>Income/Expense over the years</h3>
+                                <div>
+                               <form action="chart_gen.php" method="post">
+                                     <label>Select University name </label>
+                                     <select name ="sel1" onchange="this.form.submit">
+                                    <?php echo $option1; ?>
+                                     </select>
+                            </form>
                             </div>
-                            <div class="module-body">
-                                <div class="chart pie donut">
-                                    <div id="pie-default" class="graph">
-                                    </div>
-                                </div>
+
                             </div>
+
+                            <canvas id="myLineChart2" width="400" height="200"></canvas>
+                            <script>
+                            var ctx = document.getElementById('myLineChart2').getContext('2d');
+                            var myLineChart2 = new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                    labels: <?php print json_encode($u5_year); ?>,
+                                    datasets: [{
+                                        label: 'Income',
+                                        data: <?php print json_encode($u_income); ?>,
+                                        fill: false,
+
+                                        borderColor: [
+                                            'rgba(255, 99, 132, 1)'
+
+                                        ]},
+                                        {
+
+                                        label: 'Expense',
+                                        data: <?php print json_encode($u_expense); ?>,
+                                        fill: false,
+
+                                        borderColor: [
+                                            'rgba(28, 221, 1, 1)'
+
+                                        ],
+
+                                    }],
+
+
+                                },
+                                options: {
+                                  //add
+
+                                }
+                            });
+                            </script>
+
+
+
+
+
+
+
+
+
                         </div>
                         <!--/.module-->
                         <br />
@@ -292,6 +370,24 @@
                             <div class="module-head">
                                 <h2>
                                     Expense of University  </h2>
+                                    <div>
+                                   <form action="chart_gen.php" method="post">
+                                         <label>Select Year </label>
+                                         <select name ="sel1" onchange="this.form.submit">
+                                        <?php echo $option2; ?>
+                                         </select>
+                                </form>
+                                </div>
+
+                                <div class="form2">
+                               <form action="chart_gen.php" method="post">
+                                     <label>Select University </label>
+                                     <select name ="sel2" onchange="this.form.submit">
+                                    <?php echo $option1; ?>
+                                     </select>
+                            </form>
+                            </div>
+
                             </div>
                             <canvas id="myPieChart" width="400" height="250"></canvas>
                             <script>
