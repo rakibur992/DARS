@@ -499,7 +499,7 @@
                             <script>
                             var ctx = document.getElementById('myChart21').getContext('2d');
                             var myChart = new Chart(ctx, {
-                                type: 'polarArea',
+                                type: 'bar',
                                 data: {
                                     labels: ['Arts', 'Sociology', 'Education', 'Science', 'Business', 'Law',
                                   'Pharmacy','Agriculture','Engineering and Technical','Economics'],
