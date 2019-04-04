@@ -493,11 +493,57 @@
                         <br />
                         <div class="module">
                             <div class="module-head">
-                                <h3>
-                                    Pie - Default</h3>
+                                <h1>Subject Distribution</h1>
                             </div>
-
-                            // code
+                            <canvas id="myChart21" width="50" height="50"></canvas>
+                            <script>
+                            var ctx = document.getElementById('myChart21').getContext('2d');
+                            var myChart = new Chart(ctx, {
+                                type: 'polarArea',
+                                data: {
+                                    labels: ['Arts', 'Sociology', 'Education', 'Science', 'Business', 'Law',
+                                  'Pharmacy','Agriculture','Engineering and Technical','Economics'],
+                                    datasets: [{
+                                        label: '# of Votes',
+                                        data: <?php print json_encode($data_pie_exp2); ?>,
+                                        backgroundColor: [
+                                          'rgba(250, 109, 4,0.6)',
+                                          'rgba(23, 33, 229, 0.6)',
+                                          'rgba(127, 218, 59, 0.6)',
+                                          'rgba(202, 158, 6, 0.6)',
+                                          'rgba(59, 237, 159, 0.6)',
+                                          'rgba(59, 232, 237, 0.6)',
+                                          'rgba(116, 59, 237, 0.6)',
+                                          'rgba(213, 59, 237, 0.6)',
+                                          'rgba(255, 106, 106, 0.6)',
+                                          'rgba(237, 59, 145, 0.6)'
+                                        ],
+                                        borderColor: [
+                                          'rgba(250, 109, 4,1)',
+                                          'rgba(23, 33, 229,  1)',
+                                          'rgba(127, 218, 59, 1)',
+                                          'rgba(202, 158, 6, 1)',
+                                          'rgba(59, 237, 159, 1)',
+                                          'rgba(59, 232, 237 1)',
+                                          'rgba(116, 59, 237, 1)',
+                                          'rgba(213, 59, 237, 1)',
+                                          'rgba(255, 106, 10, 1)',
+                                          'rgba(237, 59, 145,1)',
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        yAxes: [{
+                                            ticks: {
+                                                beginAtZero: true
+                                            }
+                                        }]
+                                    }
+                                }
+                            });
+                            </script>
 
                         </div>
 
