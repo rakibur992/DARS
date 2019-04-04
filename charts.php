@@ -109,7 +109,7 @@
                     <div class="content">
                         <div class="module">
                             <div class="module-head">
-                                <h2>Total Number of Student Studying </h2>
+                                <h2> Number of Student Studying </h2>
 
                                 <div>
                                <form action="chart_gen.php" method="post">
