@@ -504,7 +504,7 @@
                                     labels: ['Arts', 'Sociology', 'Education', 'Science', 'Business', 'Law',
                                   'Pharmacy','Agriculture','Engineering and Technical','Economics'],
                                     datasets: [{
-                                        label: '# of Votes',
+                                        
                                         data: <?php print json_encode($data_pie_exp2); ?>,
                                         backgroundColor: [
                                           'rgba(250, 109, 4,0.6)',
