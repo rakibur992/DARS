@@ -288,7 +288,7 @@
                         <br />
                         <div class="module">
                             <div class="module-head">
-                                <h3>Income/Expense over the years</h3>
+                                <h2>Income/Expense over the years</h2>
                                 <div>
                                <form action="chart_gen.php" method="post">
                                      <label>Select University name </label>
@@ -438,7 +438,7 @@
                             });
                             </script>
                         </div>
-                        <!--/.module-->
+                        <h2>Student distribution<h2>
                     </div>
                     <!--/.content-->
                 </div>
