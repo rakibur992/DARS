@@ -499,12 +499,12 @@
                             <script>
                             var ctx = document.getElementById('myChart21').getContext('2d');
                             var myChart = new Chart(ctx, {
-                                type: 'polarArea',
+                                type: 'bar',
                                 data: {
                                     labels: ['Arts', 'Sociology', 'Education', 'Science', 'Business', 'Law',
                                   'Pharmacy','Agriculture','Engineering and Technical','Economics'],
                                     datasets: [{
-                                        
+
                                         data: <?php print json_encode($data_pie_exp2); ?>,
                                         backgroundColor: [
                                           'rgba(250, 109, 4,0.6)',
