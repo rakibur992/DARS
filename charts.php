@@ -568,11 +568,39 @@
                         <br />
                         <div class="module">
                             <div class="module-head">
-                                <h3>
-                                    Pie - Default</h3>
+                                <h1>Research Project Completed over the years</h1>
+                                <form action="chart_gen.php" method="post">
+                                      <label>Select University name </label>
+                                      <select name ="sel1" onchange="this.form.submit">
+                                     <?php echo $option1; ?>
+                                      </select>
                             </div>
+                            <canvas id="myLineChart3" width="400" height="200"></canvas>
+                            <script>
+                            var ctx = document.getElementById('myLineChart3').getContext('2d');
+                            var myLineChart2 = new Chart(ctx, {
+                                type: 'line',
+                                data: {
+                                    labels: <?php print json_encode($u_yearP); ?>,
+                                    datasets: [{
+                                        label: 'Income',
+                                        data: <?php print json_encode($u_Project); ?>,
+                                        fill: false,
 
-                            // code
+                                        borderColor: [
+                                            'rgba(255, 99, 132, 1)'
+
+                                        ]},
+                                        ],
+
+
+                                },
+                                options: {
+                                  //add
+
+                                }
+                            });
+                            </script>
 
                         </div>
 
@@ -616,8 +644,7 @@
                         <br />
                         <div class="module">
                             <div class="module-head">
-                                <h3>
-                                    Pie - Default</h3>
+                                <h1></h1>
                             </div>
 
                             // code
