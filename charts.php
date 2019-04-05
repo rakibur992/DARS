@@ -31,8 +31,12 @@
         rel='stylesheet'>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js" integrity="sha256-oSgtFCCmHWRPQ/JmR4OoZ3Xke1Pw4v50uh6pLcu+fIc=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"> </script>
+
+
 </head>
 <body>
+  <script type="text/javascript" src="js/dy_chart_gen.js"></script>
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
@@ -114,7 +118,7 @@
 
                                 <div>
                                      <label>Select Year </label>
-                                     <select id ="sel1" onchange="view();" >
+                                     <select id ="sel1">
                                     <?php echo $option2; ?>
                                      </select>
                             </div>

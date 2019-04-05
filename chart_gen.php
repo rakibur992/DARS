@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "rakib";
 $dbname = "dars2.0";
 
 // Create connection
@@ -139,10 +139,10 @@ AND u.University_Name='Independent University Bangladesh'";
 $result = mysqli_query($conn, $sql22);
 $i=0;
 while ($row22 = mysqli_fetch_assoc($result)) {
-  $u_Project[$i]=$row22["Research_Project_Completed"];
-  $u_yearP[$i]=$row22["Pyear_pk"];
+    $u_Project[$i]=$row22["Research_Project_Completed"];
+    $u_yearP[$i]=$row22["Pyear_pk"];
 
-  $i+=1;
+    $i+=1;
 }
 
 
