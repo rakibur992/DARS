@@ -14,19 +14,7 @@ if (!$conn) {
 
 //generating bar chart
 
-    $sql1 = "SELECT  University_Name,Total_Student_Studying FROM university u,student_distribution s WHERE UYear='2017' AND u.Uid_PK=s.uID_PK AND u.UYear=s.year_PK ";
-    $result = mysqli_query($conn, $sql1);
 
-    if (mysqli_num_rows($result) > 0) {
-
-      // output data of each row
-        $i=0;
-        while ($row = mysqli_fetch_assoc($result)) {
-            $data_bar[$i]=$row["University_Name"] ;
-            $data2_bar[$i]=$row["Total_Student_Studying"] ;
-            $i+=1;
-        }
-    }
 
 
 //generating doughnut chart

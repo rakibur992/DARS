@@ -14,6 +14,7 @@
   include('chart_gen.php');
   include('combox.php');
 
+
 ?>
 
 <!DOCTYPE html>
@@ -112,15 +113,10 @@
                                 <h2>Total Number of Student Studying </h2>
 
                                 <div>
-                               <form action="chart_gen.php" method="post">
-                               <fieldset class="form">
                                      <label>Select Year </label>
-                                     <select name ="sel1" onchange="this.form.submit">
+                                     <select id ="sel1" onchange="view();" >
                                     <?php echo $option2; ?>
                                      </select>
-                               </fieldset>
-
-                            </form>
                             </div>
 
                             </div>
@@ -128,90 +124,111 @@
                                  <canvas id="myChart" width="400" height="400"></canvas>
                                  <script>
 
-                                 var ctx = document.getElementById('myChart').getContext('2d');
-                                 var myChart = new Chart(ctx, {
-                                     type: 'bar',
-                                     data: {
-                                         labels: <?php print json_encode($data_bar); ?>,
-                                         datasets: [{
-                                             label: ["Number of Student"],
+                                 function view(){
 
-                                             data: <?php print json_encode($data2_bar); ?>,
-                                             backgroundColor: [
-                                                 'rgba(255, 99, 132, 0.6)',
-                                                 'rgba(54, 162, 235, 0.6)',
-                                                 'rgba(255, 206, 86, 0.6)',
-                                                 'rgba(75, 192, 192, 0.6)',
-                                                 'rgba(153, 102, 255, 0.6)',
-                                                 'rgba(255, 159, 64, 0.6)',
-                                                 'rgba(255, 99, 132, 0.6)',
-                                                 'rgba(54, 162, 235, 0.6)',
-                                                 'rgba(255, 206, 86, 0.6)',
-                                                 'rgba(75, 192, 192, 0.6)',
-                                                 'rgba(153, 102, 255, 0.6)',
-                                                 'rgba(255, 159, 64, 0.6)',
-                                                 'rgba(255, 99, 132, 0.6)',
-                                                 'rgba(54, 162, 235, 0.6)',
-                                                 'rgba(255, 206, 86, 0.6)',
-                                                 'rgba(75, 192, 192, 0.6)',
-                                                 'rgba(153, 102, 255, 0.6)',
-                                                 'rgba(255, 159, 64, 0.6)',
-                                                 'rgba(255, 99, 132, 0.6)',
-                                                 'rgba(54, 162, 235, 0.6)',
-                                                 'rgba(255, 206, 86, 0.6)',
-                                                 'rgba(75, 192, 192, 0.6)',
-                                                 'rgba(153, 102, 255, 0.6)',
-                                                 'rgba(255, 159, 64, 0.6)',
-                                                 'rgba(255, 99, 132, 0.6)',
-                                                 'rgba(54, 162, 235, 0.6)',
-                                                 'rgba(255, 206, 86, 0.6)',
-                                                 'rgba(75, 192, 192, 0.6)',
-                                                 'rgba(153, 102, 255, 0.6)',
-                                                 'rgba(255, 159, 64, 0.6)',
-                                                 'rgba(255, 159, 64, 0.6)'
 
-                                             ],
-                                             borderColor: [
-                                                 'rgba(255, 99, 132, 1)',
-                                                 'rgba(54, 162, 235, 1)',
-                                                 'rgba(255, 206, 86, 1)',
-                                                 'rgba(75, 192, 192, 1)',
-                                                 'rgba(153, 102, 255, 1)',
-                                                 'rgba(255, 159, 64, 1)',
-                                                 'rgba(255, 99, 132, 1)',
-                                                 'rgba(54, 162, 235, 1)',
-                                                 'rgba(255, 206, 86, 1)',
-                                                 'rgba(75, 192, 192, 1)',
-                                                 'rgba(153, 102, 255, 1)',
-                                                 'rgba(255, 159, 64, 1)',
-                                                 'rgba(255, 99, 132, 1)',
-                                                 'rgba(54, 162, 235, 1)',
-                                                 'rgba(255, 206, 86, 1)',
-                                                 'rgba(75, 192, 192, 1)',
-                                                 'rgba(153, 102, 255, 1)',
-                                                 'rgba(255, 159, 64, 1)',
-                                                 'rgba(255, 99, 132, 1)',
-                                                 'rgba(54, 162, 235, 1)',
-                                                 'rgba(255, 206, 86, 1)',
-                                                 'rgba(75, 192, 192, 1)',
-                                                 'rgba(153, 102, 255, 1)',
-                                                 'rgba(255, 159, 64, 1)',
-                                                 'rgba(255, 159, 64, 1)'
-                                             ],
-                                             borderWidth: 1
-                                         }]
-                                     },
-                                     options: {
-                                         scales: {
-                                             yAxes: [{
-                                                 ticks: {
-                                                     beginAtZero: true
-                                                 }
-                                             }]
-                                         }
-                                     }
-                                 });
 
+                                   <?php
+                                   $sql1 = "SELECT  University_Name,Total_Student_Studying FROM university u,student_distribution s WHERE UYear='2017' AND u.Uid_PK=s.uID_PK AND u.UYear=s.year_PK ";
+                                   $result = mysqli_query($conn, $sql1);
+
+                                   if (mysqli_num_rows($result) > 0) {
+
+                                   // output data of each row
+                                       $i=0;
+                                       while ($row = mysqli_fetch_assoc($result)) {
+                                           $data_bar[$i]=$row["University_Name"] ;
+                                           $data2_bar[$i]=$row["Total_Student_Studying"] ;
+                                           $i+=1;
+                                       }
+                                   }
+
+                                    ?>
+                                            var ctx = document.getElementById('myChart').getContext('2d');
+                                            var myChart = new Chart(ctx, {
+                                                type: 'bar',
+                                                data: {
+                                                    labels: <?php print json_encode($data_bar); ?>,
+                                                    datasets: [{
+                                                        label: ["Number of Student"],
+
+                                                        data: <?php print json_encode($data2_bar); ?>,
+                                                        backgroundColor: [
+                                                            'rgba(255, 99, 132, 0.6)',
+                                                            'rgba(54, 162, 235, 0.6)',
+                                                            'rgba(255, 206, 86, 0.6)',
+                                                            'rgba(75, 192, 192, 0.6)',
+                                                            'rgba(153, 102, 255, 0.6)',
+                                                            'rgba(255, 159, 64, 0.6)',
+                                                            'rgba(255, 99, 132, 0.6)',
+                                                            'rgba(54, 162, 235, 0.6)',
+                                                            'rgba(255, 206, 86, 0.6)',
+                                                            'rgba(75, 192, 192, 0.6)',
+                                                            'rgba(153, 102, 255, 0.6)',
+                                                            'rgba(255, 159, 64, 0.6)',
+                                                            'rgba(255, 99, 132, 0.6)',
+                                                            'rgba(54, 162, 235, 0.6)',
+                                                            'rgba(255, 206, 86, 0.6)',
+                                                            'rgba(75, 192, 192, 0.6)',
+                                                            'rgba(153, 102, 255, 0.6)',
+                                                            'rgba(255, 159, 64, 0.6)',
+                                                            'rgba(255, 99, 132, 0.6)',
+                                                            'rgba(54, 162, 235, 0.6)',
+                                                            'rgba(255, 206, 86, 0.6)',
+                                                            'rgba(75, 192, 192, 0.6)',
+                                                            'rgba(153, 102, 255, 0.6)',
+                                                            'rgba(255, 159, 64, 0.6)',
+                                                            'rgba(255, 99, 132, 0.6)',
+                                                            'rgba(54, 162, 235, 0.6)',
+                                                            'rgba(255, 206, 86, 0.6)',
+                                                            'rgba(75, 192, 192, 0.6)',
+                                                            'rgba(153, 102, 255, 0.6)',
+                                                            'rgba(255, 159, 64, 0.6)',
+                                                            'rgba(255, 159, 64, 0.6)'
+
+                                                        ],
+                                                        borderColor: [
+                                                            'rgba(255, 99, 132, 1)',
+                                                            'rgba(54, 162, 235, 1)',
+                                                            'rgba(255, 206, 86, 1)',
+                                                            'rgba(75, 192, 192, 1)',
+                                                            'rgba(153, 102, 255, 1)',
+                                                            'rgba(255, 159, 64, 1)',
+                                                            'rgba(255, 99, 132, 1)',
+                                                            'rgba(54, 162, 235, 1)',
+                                                            'rgba(255, 206, 86, 1)',
+                                                            'rgba(75, 192, 192, 1)',
+                                                            'rgba(153, 102, 255, 1)',
+                                                            'rgba(255, 159, 64, 1)',
+                                                            'rgba(255, 99, 132, 1)',
+                                                            'rgba(54, 162, 235, 1)',
+                                                            'rgba(255, 206, 86, 1)',
+                                                            'rgba(75, 192, 192, 1)',
+                                                            'rgba(153, 102, 255, 1)',
+                                                            'rgba(255, 159, 64, 1)',
+                                                            'rgba(255, 99, 132, 1)',
+                                                            'rgba(54, 162, 235, 1)',
+                                                            'rgba(255, 206, 86, 1)',
+                                                            'rgba(75, 192, 192, 1)',
+                                                            'rgba(153, 102, 255, 1)',
+                                                            'rgba(255, 159, 64, 1)',
+                                                            'rgba(255, 159, 64, 1)'
+                                                        ],
+                                                        borderWidth: 1
+                                                    }]
+                                                },
+                                                options: {
+                                                    scales: {
+                                                        yAxes: [{
+                                                            ticks: {
+                                                                beginAtZero: true
+                                                            }
+                                                        }]
+                                                    }
+                                                }
+                                            });
+
+                                 }
 
                                  </script>
 
@@ -627,7 +644,7 @@
                 <!--/.span9-->
             </div>
         </div>
-      
+
     <!--/.wrapper-->
     <div class="footer">
         <div class="container">

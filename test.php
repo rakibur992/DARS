@@ -1,1 +1,28 @@
-<script>new Chart(document.getElementById("chartjs-2"),{"type":"horizontalBar","data":{"labels":["January","February","March","April","May","June","July"],"datasets":[{"label":"My First Dataset","data":[65,59,80,81,56,55,40],"fill":false,"backgroundColor":["rgba(255, 99, 132, 0.2)","rgba(255, 159, 64, 0.2)","rgba(255, 205, 86, 0.2)","rgba(75, 192, 192, 0.2)","rgba(54, 162, 235, 0.2)","rgba(153, 102, 255, 0.2)","rgba(201, 203, 207, 0.2)"],"borderColor":["rgb(255, 99, 132)","rgb(255, 159, 64)","rgb(255, 205, 86)","rgb(75, 192, 192)","rgb(54, 162, 235)","rgb(153, 102, 255)","rgb(201, 203, 207)"],"borderWidth":1}]},"options":{"scales":{"xAxes":[{"ticks":{"beginAtZero":true}}]}}});</script>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="a">
+      <select  id="s1" onchange="ts();">
+        <option value="1">as</option>
+        <option value="2">ax</option>
+
+      </select>
+    </div>
+    <br>
+  <div class="s">
+    <h1>hi</h1>
+    <script>  
+      var s=document.getElementById("sel1").value;
+    </script>
+
+  </div>
+
+
+
+  </body>
+</html>
