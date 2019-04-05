@@ -11,6 +11,7 @@
       header("location: index.php");
   }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,9 +35,9 @@
                         <i class="icon-reorder shaded"></i></a><a class="brand" href="home.php">DARS </a>
                     <div class="nav-collapse collapse navbar-inverse-collapse">
                         <ul class="nav nav-icons">
-                            <li class="active"><a href="#"><i class="icon-envelope"></i></a></li>
-                            <li><a href="#"><i class="icon-eye-open"></i></a></li>
-                            <li><a href="#"><i class="icon-bar-chart"></i></a></li>
+                            <!-- <li class="active"><a href="#"><i class="icon-envelope"></i></a></li> -->
+                            <!-- <li><a href="#"><i class="icon-eye-open"></i></a></li> -->
+                            <li><a href="charts.php"><i class="icon-bar-chart"></i></a></li>
                         </ul>
                         <form class="navbar-search pull-left input-append" action="#">
                         <input type="text" class="span3">
@@ -78,10 +79,24 @@
 
                             <ul class="widget widget-menu unstyled">
 
-                                <li><a href="form.php"><i class="menu-icon icon-paste"></i>Forms </a></li>
+                               <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-paste">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Forms</a>
+                                    <ul id="togglePages" class="collapse unstyled">
+                                        <li><a href="UniversityInfo.php"><i class="menu-icon icon-paste"></i>University Information </a></li>
+                                        <li><a href="TeacherInfo.php"><i class="menu-icon icon-paste"></i>Teacher Distribution </a></li>
+                                       <li><a href="StudentInfo.php"><i class="menu-icon icon-paste"></i>Student Distribution </a></li>
+                                       <li><a href="ResearchPublications.php"><i class="menu-icon icon-paste"></i>Research and Publications </a></li>
+                                       <li><a href="Finances.php"><i class="menu-icon icon-paste"></i>Finances </a></li>
+                                       <li><a href="Courses.php"><i class="menu-icon icon-paste"></i>Courses </a></li>
+                                    </ul>
+                            </li>
                                 <li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li>
                                 <li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>
                             </ul>
+
+
+
                             <!--/.widget-nav-->
                             <ul class="widget widget-menu unstyled">
 
@@ -93,16 +108,16 @@
                         <!--/.sidebar-->
                     </div>
                     <!--/.span3-->
+
                     <div class="span9">
                         <div class="content">
                             <div class="btn-controls">
 
+
                                 <div class="btn-box-row row-fluid">
 
-                                        <div class="row-fluid">
-                                            <div class="span12">
 
-                                              <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display"
+                                              <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped  display"
                                                   width="100%">
                                                   <thead>
                                                     <tr>
@@ -138,15 +153,17 @@
                                                     if (mysqli_num_rows($result) > 0) {
                                                         // output data of each row
                                                         while ($row = mysqli_fetch_assoc($result)) {
-                                                            echo '<tr>'
-                                                    .'<td>' . $row["University_Name"]. '</td>'
-                                                    .'<td>' . $row["University_Address"] . '</td>'
-                                                    .'<td>'. $row["University_Contact"].'</td>'
-                                                    .'<td>'. $row["University_Email"]. '</td>'
-                                                    .'<td><a  href=https://' .$row["University_Website"].' target="_blank" >'. $row["University_Website"].  '</td></a>'
+                                                            echo "<tr>
+                                                    <td>" . $row["University_Name"]. "</td>
+                                                    <td>" . $row["University_Address"] . "</td>
+                                                    <td>". $row["University_Contact"]."</td>
+                                                    <td>". $row["University_Email"]. "</td>
+                                                    <td> <a  href=https://" .$row["University_Website"]." target='_blank'>". $row["University_Website"].  "</td></a>
 
-                                                    .'</tr>';
+                                                    </tr>";
                                                         }
+
+                                                        echo "</table>";
                                                     } else {
                                                         echo "0 results";
                                                     }
@@ -158,6 +175,38 @@
 
                         </div>
                     </div>
+
+                    <div class="module">
+                                <div class="module-head">
+                                    <h3>
+                                        Profit Chart</h3>
+                                </div>
+                                <div class="module-body">
+                                    <div class="chart inline-legend grid">
+                                        <div id="placeholder2" class="graph" style="height: 500px">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                    <div class="module hide">
+                                <div class="module-head">
+                                    <h3>
+                                        Adjust Budget Range</h3>
+                                </div>
+                                <div class="module-body">
+                                    <div class="form-inline clearfix">
+                                        <a href="#" class="btn pull-right">Update</a>
+                                        <label for="amount">
+                                            Price range:</label>
+                                        &nbsp;
+                                        <input type="text" id="amount" class="input-" />
+                                    </div>
+                                    <hr />
+                                    <div class="slider-range">
+                                    </div>
+                                </div>
+                            </div>
 
 
 
