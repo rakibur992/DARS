@@ -23,7 +23,7 @@
 					<i class="icon-reorder shaded"></i>
 				</a>
 
-				<a class="brand" href="home.php">
+				<a class="brand" href="index.html">
 					DARS
 				</a>
 
@@ -103,9 +103,18 @@
 
 						<ul class="widget widget-menu unstyled">
 
-							<li><a href="form.php"><i class="menu-icon icon-paste"></i>Forms </a></li>
+							<li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-paste">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Forms</a>
+                                    <ul id="togglePages" class="collapse unstyled">
+                                        <li><a href="other-login.html"><i class="menu-icon icon-paste"></i>University Information </a></li>
+                                        <li><a href="other-user-profile.html"><i class="icon-inbox"></i>Profile </a></li>
+                                        <li><a href="other-user-listing.html"><i class="icon-inbox"></i>All Users </a></li>
+                                    </ul>
+                            </li>
 							<li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li>
 							<li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>
+							 
 						</ul>
 						<!--/.widget-nav-->
 
@@ -129,6 +138,138 @@
 
 				<div class="span9">
 					<div class="content">
+
+						<div class="module">
+							<div class="module-head">
+								<h3>University Information</h3>
+							</div>
+							<div class="module-body">
+
+								<br />
+
+								<form class="form-horizontal row-fluid">
+									
+									<div class="control-group">
+										<label class="control-label" for="basicinput">Year</label>
+										<div class="controls">
+											<div class="input-append">
+												<input type="text" placeholder="2018" class="span8">
+											</div>
+										</div>
+									</div>
+
+
+									<div class="control-group">
+										<label class="control-label" for="basicinput">University Name</label>
+										<div class="controls">
+											<input type="text" id="basicinput" placeholder="" class="span8">
+										</div>
+									</div>
+
+									<div class="control-group">
+										<label class="control-label" for="basicinput">University Address</label>
+										<div class="controls">
+											<input type="text" id="basicinput" placeholder="House no, Road no, Area, City, Postal code" class="span8">
+										</div>
+									</div>
+
+									<div class="control-group">
+										<label class="control-label" for="basicinput">Contact Number</label>
+										<div class="controls">
+											<input type="text" id="basicinput" placeholder="xxx-xxxxxxxx" class="span8">
+										</div>
+									</div>
+
+									<div class="control-group">
+										<label class="control-label" for="basicinput">Email Address</label>
+										<div class="controls">
+											<input type="text" id="basicinput" placeholder="xx@xxxx.edu" class="span8">
+										</div>
+									</div>
+
+									<div class="control-group">
+										<label class="control-label" for="basicinput">Website Address</label>
+										<div class="controls">
+											<input type="text" id="basicinput" placeholder="www.xxxx.com" class="span8">
+										</div>
+									</div>
+
+									<div class="control-group">
+										<label class="control-label" for="basicinput">University Land</label>
+										<div class="controls">
+											<div class="input-append">
+												<input type="text" placeholder="5.000" class="span8"><span class="add-on">Acre</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="control-group">
+										<label class="control-label" for="basicinput">University Physical Structure Owned</label>
+										<div class="controls">
+											<div class="input-append">
+												<input type="text" placeholder="5.000" class="span8"><span class="add-on">Acre</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="control-group">
+										<label class="control-label" for="basicinput">University Physical Structure Rented</label>
+										<div class="controls">
+											<div class="input-append">
+												<input type="text" placeholder="5.000" class="span8"><span class="add-on">Acre</span>
+											</div>
+										</div>
+									</div>
+
+									<div class="control-group">
+										<label class="control-label" for="basicinput">Number of Schools</label>
+										<div class="controls">
+											<input type="text" id="basicinput" placeholder="Digits" class="span8">
+										</div>
+									</div>
+
+									<div class="control-group">
+										<label class="control-label" for="basicinput">Number of Departments</label>
+										<div class="controls">
+											<input type="text" id="basicinput" placeholder="Digits" class="span8">
+										</div>
+									</div>
+
+									<!-- <div class="control-group">
+										<label class="control-label">Inline Checkboxes</label>
+										<div class="controls">
+											<label class="checkbox inline">
+												<input type="checkbox" value="">
+												Option one
+											</label>
+											<label class="checkbox inline">
+												<input type="checkbox" value="">
+												Option two
+											</label>
+											<label class="checkbox inline">
+												<input type="checkbox" value="">
+												Option three
+											</label>
+										</div>
+									</div> -->
+<!-- 
+									<div class="control-group">
+										<label class="control-label" for="basicinput">Textarea</label>
+										<div class="controls">
+											<textarea class="span8" rows="5"></textarea>
+										</div>
+									</div> -->
+
+									<div class="control-group">
+										<br />
+										<div class="controls">
+											<button type="submit" class="btn">Submit Form</button>
+										</div>
+										<br/>
+									</div>
+								</form>
+							</div>
+						</div>
 
 						<div class="module">
 							<div class="module-head">
