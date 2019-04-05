@@ -22,7 +22,7 @@
           <i class="icon-reorder shaded"></i>
         </a>
 
-        <a class="brand" href="home.php">
+        <a class="brand" href="index.html">
           DARS
         </a>
 
