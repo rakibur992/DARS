@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "rakib";
+$password = "";
 $dbname = "dars2.0";
 
 // Create connection
@@ -130,7 +130,20 @@ if (mysqli_num_rows($result) > 0) {
     $data_pie_exp2[8]=$row["Engineering_and_Technical"] ;
     $data_pie_exp2[9]=$row["Economics"] ;
 }
+$sql22 = "SELECT  Research_Project_Completed,r.Pyear_pk
+FROM university u,research_and_publictaion r
+WHERE  u.Uid_PK=r.UiD_pk
+AND u.UYear=r.Pyear_pk
+AND u.University_Name='Independent University Bangladesh'";
 
+$result = mysqli_query($conn, $sql22);
+$i=0;
+while ($row22 = mysqli_fetch_assoc($result)) {
+  $u_Project[$i]=$row22["Research_Project_Completed"];
+  $u_yearP[$i]=$row22["Pyear_pk"];
+
+  $i+=1;
+}
 
 
 $conn->close();
