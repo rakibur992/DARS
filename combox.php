@@ -35,9 +35,9 @@ if (mysqli_num_rows($result2) > 0) {
     // output data of each row
 
     $option2="";
+    $i=0;
     while ($row2 = mysqli_fetch_assoc($result2)) {
         $option2=$option2.'<option value="'.$row2["UYear"].'">'.$row2["UYear"].'</option>';
-        ;
     }
 }
 

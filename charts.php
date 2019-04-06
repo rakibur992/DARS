@@ -13,8 +13,6 @@
 
   include('chart_gen.php');
   include('combox.php');
-
-
 ?>
 
 <!DOCTYPE html>
@@ -31,9 +29,7 @@
         rel='stylesheet'>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js" integrity="sha256-oSgtFCCmHWRPQ/JmR4OoZ3Xke1Pw4v50uh6pLcu+fIc=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="js/jquery-3.3.1.min.js"> </script>
-
-
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
   <script type="text/javascript" src="js/dy_chart_gen.js"></script>
@@ -118,123 +114,15 @@
 
                                 <div>
                                      <label>Select Year </label>
-                                     <select id ="sel1">
+                                     <select id ="year1">
                                     <?php echo $option2; ?>
                                      </select>
                             </div>
 
-                            </div>
+                          </div >
                                <!--first chart-->
+
                                  <canvas id="myChart" width="400" height="400"></canvas>
-                                 <script>
-
-                                 function view(){
-
-
-
-                                   <?php
-                                   $sql1 = "SELECT  University_Name,Total_Student_Studying FROM university u,student_distribution s WHERE UYear='2017' AND u.Uid_PK=s.uID_PK AND u.UYear=s.year_PK ";
-                                   $result = mysqli_query($conn, $sql1);
-
-                                   if (mysqli_num_rows($result) > 0) {
-
-                                   // output data of each row
-                                       $i=0;
-                                       while ($row = mysqli_fetch_assoc($result)) {
-                                           $data_bar[$i]=$row["University_Name"] ;
-                                           $data2_bar[$i]=$row["Total_Student_Studying"] ;
-                                           $i+=1;
-                                       }
-                                   }
-
-                                    ?>
-                                            var ctx = document.getElementById('myChart').getContext('2d');
-                                            var myChart = new Chart(ctx, {
-                                                type: 'bar',
-                                                data: {
-                                                    labels: <?php print json_encode($data_bar); ?>,
-                                                    datasets: [{
-                                                        label: ["Number of Student"],
-
-                                                        data: <?php print json_encode($data2_bar); ?>,
-                                                        backgroundColor: [
-                                                            'rgba(255, 99, 132, 0.6)',
-                                                            'rgba(54, 162, 235, 0.6)',
-                                                            'rgba(255, 206, 86, 0.6)',
-                                                            'rgba(75, 192, 192, 0.6)',
-                                                            'rgba(153, 102, 255, 0.6)',
-                                                            'rgba(255, 159, 64, 0.6)',
-                                                            'rgba(255, 99, 132, 0.6)',
-                                                            'rgba(54, 162, 235, 0.6)',
-                                                            'rgba(255, 206, 86, 0.6)',
-                                                            'rgba(75, 192, 192, 0.6)',
-                                                            'rgba(153, 102, 255, 0.6)',
-                                                            'rgba(255, 159, 64, 0.6)',
-                                                            'rgba(255, 99, 132, 0.6)',
-                                                            'rgba(54, 162, 235, 0.6)',
-                                                            'rgba(255, 206, 86, 0.6)',
-                                                            'rgba(75, 192, 192, 0.6)',
-                                                            'rgba(153, 102, 255, 0.6)',
-                                                            'rgba(255, 159, 64, 0.6)',
-                                                            'rgba(255, 99, 132, 0.6)',
-                                                            'rgba(54, 162, 235, 0.6)',
-                                                            'rgba(255, 206, 86, 0.6)',
-                                                            'rgba(75, 192, 192, 0.6)',
-                                                            'rgba(153, 102, 255, 0.6)',
-                                                            'rgba(255, 159, 64, 0.6)',
-                                                            'rgba(255, 99, 132, 0.6)',
-                                                            'rgba(54, 162, 235, 0.6)',
-                                                            'rgba(255, 206, 86, 0.6)',
-                                                            'rgba(75, 192, 192, 0.6)',
-                                                            'rgba(153, 102, 255, 0.6)',
-                                                            'rgba(255, 159, 64, 0.6)',
-                                                            'rgba(255, 159, 64, 0.6)'
-
-                                                        ],
-                                                        borderColor: [
-                                                            'rgba(255, 99, 132, 1)',
-                                                            'rgba(54, 162, 235, 1)',
-                                                            'rgba(255, 206, 86, 1)',
-                                                            'rgba(75, 192, 192, 1)',
-                                                            'rgba(153, 102, 255, 1)',
-                                                            'rgba(255, 159, 64, 1)',
-                                                            'rgba(255, 99, 132, 1)',
-                                                            'rgba(54, 162, 235, 1)',
-                                                            'rgba(255, 206, 86, 1)',
-                                                            'rgba(75, 192, 192, 1)',
-                                                            'rgba(153, 102, 255, 1)',
-                                                            'rgba(255, 159, 64, 1)',
-                                                            'rgba(255, 99, 132, 1)',
-                                                            'rgba(54, 162, 235, 1)',
-                                                            'rgba(255, 206, 86, 1)',
-                                                            'rgba(75, 192, 192, 1)',
-                                                            'rgba(153, 102, 255, 1)',
-                                                            'rgba(255, 159, 64, 1)',
-                                                            'rgba(255, 99, 132, 1)',
-                                                            'rgba(54, 162, 235, 1)',
-                                                            'rgba(255, 206, 86, 1)',
-                                                            'rgba(75, 192, 192, 1)',
-                                                            'rgba(153, 102, 255, 1)',
-                                                            'rgba(255, 159, 64, 1)',
-                                                            'rgba(255, 159, 64, 1)'
-                                                        ],
-                                                        borderWidth: 1
-                                                    }]
-                                                },
-                                                options: {
-                                                    scales: {
-                                                        yAxes: [{
-                                                            ticks: {
-                                                                beginAtZero: true
-                                                            }
-                                                        }]
-                                                    }
-                                                }
-                                            });
-
-                                 }
-
-                                 </script>
 
 
                         </div>
@@ -688,6 +576,8 @@
     <script src="scripts/flot/jquery.flot.js" type="text/javascript"></script>
     <script src="scripts/flot/jquery.flot.pie.js" type="text/javascript"></script>
     <script src="scripts/common.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/dy_chart_gen.js"></script>
 
 
 </body>

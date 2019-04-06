@@ -17,6 +17,7 @@ if (!$conn) {
 
 
 
+
 //generating doughnut chart
 
 $sql2 = "SELECT  Total_Expense_Education,Expense_Research,Expense_Salary,
