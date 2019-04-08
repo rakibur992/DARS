@@ -1,27 +1,64 @@
 $(function(){
 
+gen_bar1();
+//function for total student studying
+function gen_bar1(){
+  var year=$('#year1 option:selected').val();
+  $.post('chart/bar1.php',{input:year},function(data){
 
+        var data1=JSON.parse(data);
+        var bar1=[];
+        var bar2=[];
+
+        for (var i = 0 ; i < data1.length ; i++) {
+        bar1[i]=data1[i]["University_Name"];
+
+        bar2[i]=data1[i]["Total_Student_Studying"];
+        }
+
+        barChart1(bar1,bar2);
+   });
+
+}
+
+function gen_line1(){
+
+  var uni1=$('#selUni1 option:selected').val();
+  var uni2=$('#selUni2 option:selected').val();
+  
+  $.post('chart/line1.php',{uni1:uni1,uni2:uni2},function(data){
+
+
+        var data1=JSON.parse(data);
+        console.log(data1);
+        var bar1=[];
+        var bar2=[];
+
+
+   });
+
+
+}
+
+//calling function for total student studying
   $('#year1').change(function(){
-    var year=$('#year1 option:selected').val();
-    $.post('chart/bar1.php',{input:year},function(data){
-          //data1=data;
-
-          var data1=JSON.parse(data);
-          var bar1=[];
-          var bar2=[];
-          for (var i = 0 ; i < data1.length ; i++) {
-
-                bar1[i]=data1[i]["University_Name"];
-                //  console.log(data1[i]["University_Name"]);
-                  bar2[i]=data1[i]["Total_Student_Studying"];
-                  }
-
-                view(bar1,bar2);
-
-     });
+    gen_bar1();
 
   });
-  function view(bar1,bar2){
+//function for growth of Student
+
+  $('#selUni1').change(function(){
+    gen_line1();
+
+  });
+
+  $('#selUni2').change(function(){
+    gen_line1();
+
+  });
+
+// print bar1 chart
+  function barChart1(bar1,bar2){
     $("canvas#myChart").remove();
 $("div.module").append('<canvas id="myChart"  width="400" height="400"></canvas>');
     var ctx = document.getElementById('myChart').getContext('2d');
@@ -107,4 +144,7 @@ $("div.module").append('<canvas id="myChart"  width="400" height="400"></canvas>
         }
     });
   }
+
+  //charts
+
 });

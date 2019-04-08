@@ -132,21 +132,16 @@
                             <div class="module-head">
                                 <h2>Growth of Admitted Student  </h2>
                                 <div>
-                               <form action="chart_gen.php" method="post">
-                                     <label>Select Year </label>
-                                     <select name ="sel1" onchange="this.form.submit">
-                                    <?php echo $option2; ?>
-                                     </select>
-                            </form>
+                                  <label>Select University </label>
+                                  <select id="selUni1" >
+                                 <?php echo $option1; ?>
+                                  </select>
                             </div>
-
                             <div class="form2">
-                           <form action="chart_gen.php" method="post">
                                  <label>Select University </label>
-                                 <select name ="sel2" onchange="this.form.submit">
+                                 <select id="selUni2" >
                                 <?php echo $option1; ?>
                                  </select>
-                        </form>
                         </div>
                             </div>
 
