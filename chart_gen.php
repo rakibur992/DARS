@@ -50,9 +50,10 @@ if (mysqli_num_rows($result) > 0) {
   AND u.UYear=sd.year_PK
   AND u.University_Name='North South University'";
 
-$result = mysqli_query($conn, $sql3);
+$result1 = mysqli_query($conn, $sql3);
 $i=0;
-while ($row = mysqli_fetch_assoc($result)) {
+
+while ($row = mysqli_fetch_assoc($result1)) {
     $u1_data[$i]=$row["Admitted_Student"];
     $u1_year[$i]=$row["UYear"];
     $i+=1;

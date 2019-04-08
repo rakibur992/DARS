@@ -1,6 +1,5 @@
 <?php
   session_start();
-
   if (!isset($_SESSION['username'])) {
       $_SESSION['msg'] = "You must log in first";
       header('location: index.php');
@@ -10,7 +9,6 @@
       unset($_SESSION['username']);
       header("location: index.php");
   }
-
   include('chart_gen.php');
   include('combox.php');
 ?>
@@ -30,9 +28,11 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js" integrity="sha256-oSgtFCCmHWRPQ/JmR4OoZ3Xke1Pw4v50uh6pLcu+fIc=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript" src="js/dy_chart_gen.js"></script>
 </head>
 <body>
-  <script type="text/javascript" src="js/dy_chart_gen.js"></script>
+
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
@@ -92,7 +92,7 @@
 
                         </ul>
 
-                        
+
                         <!--/.widget-nav-->
                         <ul class="widget widget-menu unstyled">
 
@@ -124,7 +124,7 @@
                 <!--/.span3-->
                 <div class="span9">
                     <div class="content">
-                        <div class="module">
+                        <div class="module" id="bar1">
                             <div class="module-head">
                                 <h2>Total Number of Student Studying </h2>
 
@@ -138,13 +138,13 @@
                           </div >
                                <!--first chart-->
 
-                                 <canvas id="myChart" width="400" height="400"></canvas>
+                                 <canvas id="myChart" width="400" height="350"></canvas>
 
 
                         </div>
                         <!--/.module-->
                         <br />
-                        <div class="module">
+                        <div class="module" id="line1" >
                             <div class="module-head">
                                 <h2>Growth of Admitted Student  </h2>
                                 <div>
@@ -161,182 +161,53 @@
                         </div>
                             </div>
 
-
                             <canvas id="myLineChart" width="400" height="200"></canvas>
-                            <script>
-                            var ctx = document.getElementById('myLineChart').getContext('2d');
-                            var myLineChart = new Chart(ctx, {
-                                type: 'line',
-                                data: {
-                                    labels: <?php print json_encode($u1_year); ?>,
-                                    datasets: [{
-                                        label: 'North South University',
-                                        data: <?php print json_encode($u1_data); ?>,
-                                        fill: false,
-
-                                        borderColor: [
-                                            'rgba(255, 99, 132, 1)'
-
-                                        ]},
-                                        {
-
-                                        label: 'Bangladesh University of Business and Technology',
-                                        data: <?php print json_encode($u2_data); ?>,
-                                        fill: false,
-
-                                        borderColor: [
-                                            'rgba(28, 221, 1, 1)'
-
-                                        ],
-
-                                    }],
-
-
-                                },
-                                options: {
-                                  //add
-
-                                }
-                            });
-                            </script>
-
-
-
 
                         </div>
                         <!--/.module-->
                         <br />
-                        <div class="module">
+                        <div class="module" id="line2">
                             <div class="module-head">
                                 <h2>Income/Expense over the years</h2>
                                 <div>
-                               <form action="chart_gen.php" method="post">
                                      <label>Select University name </label>
-                                     <select name ="sel1" onchange="this.form.submit">
+                                     <select id="selLine2">
                                     <?php echo $option1; ?>
                                      </select>
-                            </form>
                             </div>
 
                             </div>
 
                             <canvas id="myLineChart2" width="400" height="200"></canvas>
-                            <script>
-                            var ctx = document.getElementById('myLineChart2').getContext('2d');
-                            var myLineChart2 = new Chart(ctx, {
-                                type: 'line',
-                                data: {
-                                    labels: <?php print json_encode($u5_year); ?>,
-                                    datasets: [{
-                                        label: 'Income',
-                                        data: <?php print json_encode($u_income); ?>,
-                                        fill: false,
 
-                                        borderColor: [
-                                            'rgba(255, 99, 132, 1)'
-
-                                        ]},
-                                        {
-
-                                        label: 'Expense',
-                                        data: <?php print json_encode($u_expense); ?>,
-                                        fill: false,
-
-                                        borderColor: [
-                                            'rgba(28, 221, 1, 1)'
-
-                                        ],
-
-                                    }],
-
-
-                                },
-                                options: {
-                                  //add
-
-                                }
-                            });
-                            </script>
                         </div>
                         <!--/.module-->
                         <br />
-                        <div class="module">
+                        <div class="module" id="pie1">
                             <div class="module-head">
                                 <h1>Student Distribution</h1>
                                 <div>
-                               <form action="chart_gen.php" method="post">
                                      <label>Select Year </label>
-                                     <select name ="sel1" onchange="this.form.submit">
+                                     <select id='sel1pie1'>
                                     <?php echo $option2; ?>
                                      </select>
-                            </form>
                             <div class="form2">
-                           <form action="chart_gen.php" method="post">
                                  <label>Select University </label>
-                                 <select name ="sel2" onchange="this.form.submit">
+                                 <select id="sel2pie1" >
                                 <?php echo $option1; ?>
                                  </select>
-                        </form>
                         </div>
                             </div>
                             </div>
 
+                            <canvas id="myPieChart1" width="300" height="250"></canvas>
 
-
-                            <canvas id="myPieChart1" width="400" height="250"></canvas>
-                            <script>
-                            var ctx = document.getElementById('myPieChart1').getContext('2d');
-                            var myPieChart = new Chart(ctx, {
-                                type: 'pie',
-                                data: {
-                                    labels: ['Female Student','Undergraduate pass'
-                                              ,'Undergraduate Hons','Undergraduate Passed Student Normal'
-                                              ,'Undergraduate Passed Student Hons','Undergraduate Passed Student Eng tech'
-                                              ,'Graduate Passed Student Normal','Graduate Passed Student Eng tech'
-                                              ,'Student Poverty'
-                                              ,'Student Freedom Fighter'],
-                                    datasets: [{
-
-                                        data: <?php print json_encode($data_pie_exp1); ?>,
-                                        backgroundColor: [
-                                          'rgba(250, 109, 4,0.6)',
-                                          'rgba(23, 33, 229, 0.6)',
-                                          'rgba(127, 218, 59, 0.6)',
-                                          'rgba(202, 158, 6, 0.6)',
-                                          'rgba(59, 237, 159, 0.6)',
-                                          'rgba(59, 232, 237, 0.6)',
-                                          'rgba(116, 59, 237, 0.6)',
-                                          'rgba(213, 59, 237, 0.6)',
-                                          'rgba(255, 106, 106, 0.6)',
-                                          'rgba(237, 59, 145, 0.6)'
-
-                                        ],
-                                        borderColor: [
-                                          'rgba(250, 109, 4,1)',
-                                          'rgba(23, 33, 229,  1)',
-                                          'rgba(127, 218, 59, 1)',
-                                          'rgba(202, 158, 6, 1)',
-                                          'rgba(59, 237, 159, 1)',
-                                          'rgba(59, 232, 237 1)',
-                                          'rgba(116, 59, 237, 1)',
-                                          'rgba(213, 59, 237, 1)',
-                                          'rgba(255, 106, 10, 1)',
-                                          'rgba(237, 59, 145,1)',
-                                        ],
-                                        borderWidth: 1
-                                    }]
-                                },
-                                options: {
-
-                                }
-                            });
-                            </script>
                         </div>
 
 
                         <!--/.module-->
                         <br />
-                        <div class="module">
+                        <div class="module" id="pie1">
                             <div class="module-head">
                                 <h2>
                                     Expense of University  </h2>
@@ -372,7 +243,6 @@
                                               ,'Per Student'
                                               ,'Infrustructure&Maintainence'],
                                     datasets: [{
-
                                         data: <?php print json_encode($data_pie_exp); ?>,
                                         backgroundColor: [
                                           'rgba(250, 109, 4,0.6)',
@@ -385,7 +255,6 @@
                                           'rgba(213, 59, 237, 0.6)',
                                           'rgba(255, 106, 106, 0.6)',
                                           'rgba(237, 59, 145, 0.6)'
-
                                         ],
                                         borderColor: [
                                           'rgba(250, 109, 4,1)',
@@ -403,7 +272,6 @@
                                     }]
                                 },
                                 options: {
-
                                 }
                             });
                             </script>
@@ -424,7 +292,6 @@
                                     labels: ['Arts', 'Sociology', 'Education', 'Science', 'Business', 'Law',
                                   'Pharmacy','Agriculture','Engineering and Technical','Economics'],
                                     datasets: [{
-
                                         data: <?php print json_encode($data_pie_exp2); ?>,
                                         backgroundColor: [
                                           'rgba(250, 109, 4,0.6)',
@@ -489,18 +356,13 @@
                                         label: 'Income',
                                         data: <?php print json_encode($u_Project); ?>,
                                         fill: false,
-
                                         borderColor: [
                                             'rgba(255, 99, 132, 1)'
-
                                         ]},
                                         ],
-
-
                                 },
                                 options: {
                                   //add
-
                                 }
                             });
                             </script>
@@ -587,8 +449,7 @@
     <script src="scripts/flot/jquery.flot.js" type="text/javascript"></script>
     <script src="scripts/flot/jquery.flot.pie.js" type="text/javascript"></script>
     <script src="scripts/common.js" type="text/javascript"></script>
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="js/dy_chart_gen.js"></script>
+
 
 
 </body>
