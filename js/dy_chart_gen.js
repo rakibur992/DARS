@@ -4,6 +4,8 @@ gen_line1();
 gen_line2();
 gen_pie1();
 gen_bar3();
+gen_pie2();
+  subjectbar();
 //function for total student studying
 function gen_bar1(){
   var year=$('#year1 option:selected').val();
@@ -74,8 +76,35 @@ function gen_bar3(){
    });
 
 }
+// function for expense(doughnut)
+function gen_pie2(){
+  var selyear=$('#doughnutyear option:selected').val();
+  var selUni=$('#doughnutuni option:selected').val();
+  $.post('chart/expensedonut.php',{yearexp1:selyear,uni1exp1:selUni},function(doughnut_data){
+
+      var datadoughnut=JSON.parse(doughnut_data);
+      //console.log(doughnut_data);
+
+      doughnutchart(datadoughnut);
+
+   });
+
+}
+
+function subjectbar(){
+  var subyear=$('#subjectyear1 option:selected').val();
+  var subUni=$('#subjectuni1 option:selected').val();
+  $.post('chart/subjectdistribution.php',{yearsubject:subyear,uni1subject:subUni},function(subject_data){
+
+      var subjectdata=JSON.parse(subject_data);
+      console.log(subject_data);
+
+      subjectdistribution(subjectdata);
 
 
+   });
+
+}
 //calling function for total student studying
   $('#year1').change(function(){
     gen_bar1();
@@ -112,6 +141,21 @@ function gen_bar3(){
     gen_bar3();
   });
 
+
+  $('#doughnutyear').change(function(){
+    gen_pie2();
+  });
+  $('#doughnutuni').change(function(){
+    gen_pie2();
+  });
+
+
+  $('#subjectyear1').change(function(){
+    subjectbar();
+  });
+  $('#subjectuni1').change(function(){
+    subjectbar();
+  })
 // print bar1 chart
   function barChart1(bar1,bar2){
     $("canvas#myChart").remove();
@@ -406,3 +450,103 @@ function gen_bar3(){
 
 
 });
+  function doughnutchart(datadoughnut){
+    $("canvas#mydoughnutChart").remove();
+    $("div#doughnut").append('<canvas id="mydoughnutChart"  width="400" height="250"></canvas>')
+
+    var ctx = document.getElementById('mydoughnutChart').getContext('2d');
+    var mydoughnutChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Total Education','Research','Salary','Scholarship'
+                      ,'Transport'
+                      ,'Electricity','Medical'
+                      ,'Misc'
+                      ,'Per Student'
+                      ,'Infrustructure&Maintainence'],
+            datasets: [{
+                data: datadoughnut,
+                backgroundColor: [
+                  'rgba(250, 109, 4,0.6)',
+                  'rgba(23, 33, 229, 0.6)',
+                  'rgba(127, 218, 59, 0.6)',
+                  'rgba(202, 158, 6, 0.6)',
+                  'rgba(59, 237, 159, 0.6)',
+                  'rgba(59, 232, 237, 0.6)',
+                  'rgba(116, 59, 237, 0.6)',
+                  'rgba(213, 59, 237, 0.6)',
+                  'rgba(255, 106, 106, 0.6)',
+                  'rgba(237, 59, 145, 0.6)'
+                ],
+                borderColor: [
+                  'rgba(250, 109, 4,1)',
+                  'rgba(23, 33, 229,  1)',
+                  'rgba(127, 218, 59, 1)',
+                  'rgba(202, 158, 6, 1)',
+                  'rgba(59, 237, 159, 1)',
+                  'rgba(59, 232, 237 1)',
+                  'rgba(116, 59, 237, 1)',
+                  'rgba(213, 59, 237, 1)',
+                  'rgba(255, 106, 10, 1)',
+                  'rgba(237, 59, 145,1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+        }
+    });
+    }
+
+    function subjectdistribution(subjectdata){
+      $("canvas#myChartsubject").remove();
+      $("div#subjectchart").append('<canvas id="myChartsubject"  width="50" height="50"></canvas>')
+
+
+      var ctx = document.getElementById('myChartsubject').getContext('2d');
+      var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ['Arts', 'Sociology', 'Education', 'Science', 'Business', 'Law',
+            'Pharmacy','Agriculture','Engineering and Technical','Economics'],
+              datasets: [{
+                  data: subjectdata,
+                  backgroundColor: [
+                    'rgba(250, 109, 4,0.6)',
+                    'rgba(23, 33, 229, 0.6)',
+                    'rgba(127, 218, 59, 0.6)',
+                    'rgba(202, 158, 6, 0.6)',
+                    'rgba(59, 237, 159, 0.6)',
+                    'rgba(59, 232, 237, 0.6)',
+                    'rgba(116, 59, 237, 0.6)',
+                    'rgba(213, 59, 237, 0.6)',
+                    'rgba(255, 106, 106, 0.6)',
+                    'rgba(237, 59, 145, 0.6)'
+                  ],
+                  borderColor: [
+                    'rgba(250, 109, 4,1)',
+                    'rgba(23, 33, 229,  1)',
+                    'rgba(127, 218, 59, 1)',
+                    'rgba(202, 158, 6, 1)',
+                    'rgba(59, 237, 159, 1)',
+                    'rgba(59, 232, 237 1)',
+                    'rgba(116, 59, 237, 1)',
+                    'rgba(213, 59, 237, 1)',
+                    'rgba(255, 106, 10, 1)',
+                    'rgba(237, 59, 145,1)',
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero: true
+                      }
+                  }]
+              }
+          }
+      });
+
+    }
