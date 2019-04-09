@@ -114,7 +114,7 @@
                             </li>
 							<li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li>
 							<li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>
-							 
+
 						</ul>
 						<!--/.widget-nav-->
 
@@ -148,7 +148,7 @@
 								<br />
 
 								<form class="form-horizontal row-fluid">
-									
+
 									<div class="control-group">
 										<label class="control-label" for="basicinput">Year</label>
 										<div class="controls">
@@ -235,30 +235,7 @@
 										</div>
 									</div>
 
-									<!-- <div class="control-group">
-										<label class="control-label">Inline Checkboxes</label>
-										<div class="controls">
-											<label class="checkbox inline">
-												<input type="checkbox" value="">
-												Option one
-											</label>
-											<label class="checkbox inline">
-												<input type="checkbox" value="">
-												Option two
-											</label>
-											<label class="checkbox inline">
-												<input type="checkbox" value="">
-												Option three
-											</label>
-										</div>
-									</div> -->
-<!-- 
-									<div class="control-group">
-										<label class="control-label" for="basicinput">Textarea</label>
-										<div class="controls">
-											<textarea class="span8" rows="5"></textarea>
-										</div>
-									</div> -->
+						
 
 									<div class="control-group">
 										<br />

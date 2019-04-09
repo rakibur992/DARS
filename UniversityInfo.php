@@ -15,6 +15,10 @@
   <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
   <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="js/dy_form.js"></script>
+
+  </script>
 </head>
 
 <body>
@@ -114,13 +118,13 @@
                                        <li><a href="TeacherInfo.php"><i class="menu-icon icon-paste"></i>Teacher Distribution </a></li>
                                        <li><a href="StudentInfo.php"><i class="menu-icon icon-paste"></i>Student Distribution </a></li>
                                        <li><a href="ResearchPublications.php"><i class="menu-icon icon-paste"></i>Research and Publications </a></li>
-                                       <li><a href="Finances.php"><i class="menu-icon icon-paste"></i>Finances </a></li>    
+                                       <li><a href="Finances.php"><i class="menu-icon icon-paste"></i>Finances </a></li>
                                        <li><a href="Courses.php"><i class="menu-icon icon-paste"></i>Courses </a></li>
                                     </ul>
                             </li>
               <li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li>
               <li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>
-               
+
             </ul>
             <!--/.widget-nav-->
 
@@ -154,12 +158,12 @@
                 <br />
 
                 <form class="form-horizontal row-fluid" action="UniversityInfoSQL.php" method="post">
-                  
+
                   <div class="control-group">
                     <label class="control-label" for="basicinput">Year</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="UYear" placeholder="2018" class="span8">
+                        <input type="text" name="UYear" placeholder="2018" id="year" class="span8">
                       </div>
                     </div>
                   </div>
@@ -168,35 +172,35 @@
                   <div class="control-group">
                     <label class="control-label" for="basicinput">University Name</label>
                     <div class="controls">
-                      <input type="text" name="Name" id="basicinput" placeholder="" class="span8">
+                      <input type="text" name="Name" id="uName" placeholder="" class="span8">
                     </div>
                   </div>
 
                   <div class="control-group">
                     <label class="control-label" for="basicinput">University Address</label>
                     <div class="controls">
-                     <input type="text" name="Address" id="basicinput" placeholder="" class="span8">
+                     <input type="text" name="Address" id="uAdd" placeholder="" class="span8">
                     </div>
                   </div>
 
                   <div class="control-group">
                     <label class="control-label" for="basicinput">Contact Number</label>
                     <div class="controls">
-                      <input type="text" name="contact" id="basicinput" placeholder="880-1xxxxxxxxx" class="span8">
+                      <input type="text" name="contact" id="uNum" placeholder="880-1xxxxxxxxx" class="span8">
                     </div>
                   </div>
 
                   <div class="control-group">
                     <label class="control-label" for="basicinput">Email Address</label>
                     <div class="controls">
-                      <input type="text" name="emailAddress" id="basicinput" placeholder="name@instituition.edu" class="span8">
+                      <input type="text" name="emailAddress" id="uEmail" placeholder="name@instituition.edu" class="span8">
                     </div>
                   </div>
 
                   <div class="control-group">
                     <label class="control-label" for="basicinput">Website Address</label>
                     <div class="controls">
-                      <input type="text" name="website" id="basicinput" placeholder="www.google.com" class="span8">
+                      <input type="text" name="website" id="uWeb" placeholder="www.google.com" class="span8">
                     </div>
                   </div>
 
@@ -204,7 +208,7 @@
                     <label class="control-label" for="basicinput">University Land</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="land" placeholder="5.000" class="span8"><span class="add-on">Acre</span>
+                        <input type="text" name="land" placeholder="5.000" id="uLand" class="span8"><span class="add-on">Acre</span>
                       </div>
                     </div>
                   </div>
@@ -213,7 +217,7 @@
                     <label class="control-label" for="basicinput">University Physical Structure Owned</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="ownedland" placeholder="5.000" class="span8"><span class="add-on">Acre</span>
+                        <input type="text" name="ownedland" placeholder="5.000" id="uOwn" class="span8"><span class="add-on">Acre</span>
                       </div>
                     </div>
                   </div>
@@ -222,7 +226,7 @@
                     <label class="control-label" for="basicinput">University Physical Structure Rented</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="rentedland" placeholder="5.000" class="span8"><span class="add-on">Acre</span>
+                        <input type="text" name="rentedland" placeholder="5.000" id="uRent" class="span8"><span class="add-on">Acre</span>
                       </div>
                     </div>
                   </div>
@@ -230,41 +234,16 @@
                   <div class="control-group">
                     <label class="control-label" for="basicinput">Number of Schools</label>
                     <div class="controls">
-                      <input type="text" name="NoOfSchools" id="basicinput" placeholder="Digits" class="span8">
+                      <input type="text" name="NoOfSchools" id="uNumSchool" placeholder="Digits" class="span8">
                     </div>
                   </div>
 
                   <div class="control-group">
                     <label class="control-label" for="basicinput">Number of Departments</label>
                     <div class="controls">
-                      <input type="text" name="department" id="basicinput" placeholder="Digits" class="span8">
+                      <input type="text" name="department" id="uNumDepartment" placeholder="Digits" class="span8">
                     </div>
                   </div>
-
-                  <!-- <div class="control-group">
-                    <label class="control-label">Inline Checkboxes</label>
-                    <div class="controls">
-                      <label class="checkbox inline">
-                        <input type="checkbox" value="">
-                        Option one
-                      </label>
-                      <label class="checkbox inline">
-                        <input type="checkbox" value="">
-                        Option two
-                      </label>
-                      <label class="checkbox inline">
-                        <input type="checkbox" value="">
-                        Option three
-                      </label>
-                    </div>
-                  </div> -->
-<!-- 
-                  <div class="control-group">
-                    <label class="control-label" for="basicinput">Textarea</label>
-                    <div class="controls">
-                      <textarea class="span8" rows="5"></textarea>
-                    </div>
-                  </div> -->
 
                   <div class="control-group">
                     <br />
@@ -276,9 +255,6 @@
                 </form>
               </div>
             </div>
-
-           
-
 
 
           </div>
