@@ -208,14 +208,14 @@
 
                         <!--/.module-->
                         <br />
-                        <div class="module" id="pie1">
+                        <div class="module" id="doughnut">
                             <div class="module-head">
                                 <h2>
                                     Expense of University  </h2>
                                     <div>
                                    <form action="chart_gen.php" method="post">
                                          <label>Select Year </label>
-                                         <select name ="sel1" onchange="this.form.submit">
+                                         <select id ="doughnutyear" >
                                         <?php echo $option2; ?>
                                          </select>
                                 </form>
@@ -224,114 +224,42 @@
                                 <div class="form2">
                                <form action="chart_gen.php" method="post">
                                      <label>Select University </label>
-                                     <select name ="sel2" onchange="this.form.submit">
+                                     <select id ="doughnutuni" >
                                     <?php echo $option1; ?>
                                      </select>
                             </form>
                             </div>
 
                             </div>
-                            <canvas id="myPieChart" width="400" height="250"></canvas>
-                            <script>
-                            var ctx = document.getElementById('myPieChart').getContext('2d');
-                            var myPieChart = new Chart(ctx, {
-                                type: 'doughnut',
-                                data: {
-                                    labels: ['Total Education','Research','Salary','Scholarship'
-                                              ,'Transport'
-                                              ,'Electricity','Medical'
-                                              ,'Misc'
-                                              ,'Per Student'
-                                              ,'Infrustructure&Maintainence'],
-                                    datasets: [{
-                                        data: <?php print json_encode($data_pie_exp); ?>,
-                                        backgroundColor: [
-                                          'rgba(250, 109, 4,0.6)',
-                                          'rgba(23, 33, 229, 0.6)',
-                                          'rgba(127, 218, 59, 0.6)',
-                                          'rgba(202, 158, 6, 0.6)',
-                                          'rgba(59, 237, 159, 0.6)',
-                                          'rgba(59, 232, 237, 0.6)',
-                                          'rgba(116, 59, 237, 0.6)',
-                                          'rgba(213, 59, 237, 0.6)',
-                                          'rgba(255, 106, 106, 0.6)',
-                                          'rgba(237, 59, 145, 0.6)'
-                                        ],
-                                        borderColor: [
-                                          'rgba(250, 109, 4,1)',
-                                          'rgba(23, 33, 229,  1)',
-                                          'rgba(127, 218, 59, 1)',
-                                          'rgba(202, 158, 6, 1)',
-                                          'rgba(59, 237, 159, 1)',
-                                          'rgba(59, 232, 237 1)',
-                                          'rgba(116, 59, 237, 1)',
-                                          'rgba(213, 59, 237, 1)',
-                                          'rgba(255, 106, 10, 1)',
-                                          'rgba(237, 59, 145,1)',
-                                        ],
-                                        borderWidth: 1
-                                    }]
-                                },
-                                options: {
-                                }
-                            });
-                            </script>
+                            <canvas id="mydoughnutChart" width="400" height="250"></canvas>
+
                         </div>
 
                         <!--/.module-->
                         <br />
-                        <div class="module">
+                        <div class="module" id=subjectchart>
                             <div class="module-head">
                                 <h2>Subject Distribution</h2>
+                                <div>
+                               <form action="chart_gen.php" method="post">
+                                     <label>Select Year </label>
+                                     <select id ="subjectyear1" >
+                                    <?php echo $option2; ?>
+                                     </select>
+                            </form>
                             </div>
-                            <canvas id="myChart21" width="50" height="50"></canvas>
-                            <script>
-                            var ctx = document.getElementById('myChart21').getContext('2d');
-                            var myChart = new Chart(ctx, {
-                                type: 'bar',
-                                data: {
-                                    labels: ['Arts', 'Sociology', 'Education', 'Science', 'Business', 'Law',
-                                  'Pharmacy','Agriculture','Engineering and Technical','Economics'],
-                                    datasets: [{
-                                        data: <?php print json_encode($data_pie_exp2); ?>,
-                                        backgroundColor: [
-                                          'rgba(250, 109, 4,0.6)',
-                                          'rgba(23, 33, 229, 0.6)',
-                                          'rgba(127, 218, 59, 0.6)',
-                                          'rgba(202, 158, 6, 0.6)',
-                                          'rgba(59, 237, 159, 0.6)',
-                                          'rgba(59, 232, 237, 0.6)',
-                                          'rgba(116, 59, 237, 0.6)',
-                                          'rgba(213, 59, 237, 0.6)',
-                                          'rgba(255, 106, 106, 0.6)',
-                                          'rgba(237, 59, 145, 0.6)'
-                                        ],
-                                        borderColor: [
-                                          'rgba(250, 109, 4,1)',
-                                          'rgba(23, 33, 229,  1)',
-                                          'rgba(127, 218, 59, 1)',
-                                          'rgba(202, 158, 6, 1)',
-                                          'rgba(59, 237, 159, 1)',
-                                          'rgba(59, 232, 237 1)',
-                                          'rgba(116, 59, 237, 1)',
-                                          'rgba(213, 59, 237, 1)',
-                                          'rgba(255, 106, 10, 1)',
-                                          'rgba(237, 59, 145,1)',
-                                        ],
-                                        borderWidth: 1
-                                    }]
-                                },
-                                options: {
-                                    scales: {
-                                        yAxes: [{
-                                            ticks: {
-                                                beginAtZero: true
-                                            }
-                                        }]
-                                    }
-                                }
-                            });
-                            </script>
+
+                            <div class="form2">
+                           <form action="chart_gen.php" method="post">
+                                 <label>Select University </label>
+                                 <select id ="subjectuni1" >
+                                <?php echo $option1; ?>
+                                 </select>
+                        </form>
+                        </div>
+                            </div>
+                            <canvas id="myChartsubject" width="50" height="50"></canvas>
+
 
                         </div>
 
