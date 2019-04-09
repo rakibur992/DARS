@@ -3,6 +3,7 @@ gen_bar1();
 gen_line1();
 gen_line2();
 gen_pie1();
+gen_bar3();
 //function for total student studying
 function gen_bar1(){
   var year=$('#year1 option:selected').val();
@@ -55,10 +56,23 @@ function gen_pie1(){
   var uni1=$('#sel2pie1 option:selected').val();
   $.post('chart/pie1.php',{uni1:uni1,year:selyear},function(pie_data){
         var data=JSON.parse(pie_data);
-        console.log(data);
+
 
       myPieChart1(data);
    });
+}
+//function Expense On Scholarship By University
+function gen_bar3(){
+  var selyear=$('#selbar3 option:selected').val();
+  $.post('chart/bar3.php',{year1:selyear},function(bar_data){
+
+      var data=JSON.parse(bar_data);
+      console.log(data);
+
+      barChart3(data.University_Name,data.Expense_Scholarship);
+
+   });
+
 }
 
 
@@ -92,6 +106,10 @@ function gen_pie1(){
   $('#sel2pie1').change(function(){
     gen_pie1();
 
+  });
+
+  $('#selbar3').change(function(){
+    gen_bar3();
   });
 
 // print bar1 chart
@@ -247,6 +265,7 @@ function gen_pie1(){
     });
 
   }
+  //Draw Student Distribution
   function myPieChart1(piedata){
     $("canvas#myPieChart1").remove();
     $("div#pie1").append('<canvas id="myPieChart1"  width="300" height="250"></canvas>');
@@ -294,17 +313,96 @@ function gen_pie1(){
         }
     });
 
+  }
+  //Draw Expense On Scholarship By University
+  function barChart3(uniName1,uniData){
+    $("canvas#barChart3").remove();
+    $("div#bar3").append('<canvas id="barChart3"  width="400" height="400"></canvas>');
+    var ctx = document.getElementById('barChart3').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: uniName1,
+            datasets: [{
+                label: ["Expense On Scholarship For Student"],
+                data: uniData ,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(255, 159, 64, 0.6)',
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(255, 159, 64, 0.6)',
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(255, 159, 64, 0.6)',
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(255, 159, 64, 0.6)',
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(255, 159, 64, 0.6)',
+                    'rgba(255, 159, 64, 0.6)'
+
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
 
   }
-
-
-
-
-
-
-
-
-
 
 
 });

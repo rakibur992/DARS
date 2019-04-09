@@ -131,7 +131,8 @@
                                 <div>
                                      <label>Select Year </label>
                                      <select id ="year1">
-                                    <?php echo $option2; ?>
+
+                                   <?php echo $option2; ?>
                                      </select>
                             </div>
 
@@ -281,7 +282,7 @@
                         <br />
                         <div class="module">
                             <div class="module-head">
-                                <h1>Subject Distribution</h1>
+                                <h2>Subject Distribution</h2>
                             </div>
                             <canvas id="myChart21" width="50" height="50"></canvas>
                             <script>
@@ -338,8 +339,8 @@
                         <br />
                         <div class="module">
                             <div class="module-head">
-                                <h1>Research Project Completed over the years</h1>
-                                <form action="chart_gen.php" method="post">
+                                <h2>Research Project Completed over the years</h2>
+
                                       <label>Select University name </label>
                                       <select name ="sel1" onchange="this.form.submit">
                                      <?php echo $option1; ?>
@@ -371,10 +372,37 @@
 
                         <!--/.module-->
                         <br />
+                        <div class="module" id="bar3">
+                            <div class="module-head">
+                                <h2>Expense On Scholarship By University</h2>
+
+                                     <label>Select Year </label>
+                                     <select id='selbar3'>
+                                    <?php echo $option2; ?>
+                                     </select>
+                            </div>
+
+                            <canvas id="barChart3" width="300" height="250"></canvas>
+
+                        </div>
+
+                        <!--/.module-->
+                        <br />
+                        <div class="module">
+                            <div class="module-head">
+                                <h3></h3>
+
+                            </div>
+
+                            // code
+
+                        </div>
+                        <!--/.module-->
+                        <br />
                         <div class="module">
                             <div class="module-head">
                                 <h3>
-                                    Pie - Default</h3>
+                                    Pie - Default6</h3>
                             </div>
 
                             // code
@@ -386,19 +414,7 @@
                         <div class="module">
                             <div class="module-head">
                                 <h3>
-                                    Pie - Default</h3>
-                            </div>
-
-                            // code
-
-                        </div>
-
-                        <!--/.module-->
-                        <br />
-                        <div class="module">
-                            <div class="module-head">
-                                <h3>
-                                    Pie - Default</h3>
+                                    Pie - Default2</h3>
                             </div>
 
                             // code
@@ -421,7 +437,7 @@
                         <div class="module">
                             <div class="module-head">
                                 <h3>
-                                    Pie - Default</h3>
+                                    Pie - Default3</h3>
                             </div>
 
                             // code
