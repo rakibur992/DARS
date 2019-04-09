@@ -94,6 +94,7 @@
                             </li>
                                 <li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li>
                                 <li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Graphical Representation </a></li>
+                                <li><a href="commentsection.php"><i class="menu-icon icon-bar-chart"></i>Comment Section</a></li>
                             </ul>
 
 

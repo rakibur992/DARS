@@ -8,7 +8,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forms</title>
+  <title>University Information</title>
   <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
   <link type="text/css" href="css/theme.css" rel="stylesheet">
@@ -32,13 +32,7 @@
 
         <div class="nav-collapse collapse navbar-inverse-collapse">
           <ul class="nav nav-icons">
-            <li class="active"><a href="#">
-                <i class="icon-envelope"></i>
-              </a></li>
-            <li><a href="#">
-                <i class="icon-eye-open"></i>
-              </a></li>
-            <li><a href="#">
+            <li><a href="charts.php">
                 <i class="icon-bar-chart"></i>
               </a></li>
           </ul>
@@ -51,21 +45,9 @@
           </form>
 
           <ul class="nav pull-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Item No. 1</a></li>
+            
 
-                <li><a href="#">Don't Click</a></li>
-                <li class="divider"></li>
-                <li class="nav-header">Example Header</li>
-                <li><a href="#">A Separated link</a></li>
-              </ul>
-            </li>
-
-            <li><a href="#">
-                Support
-              </a></li>
+            
             <li class="nav-user dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="images/user.png" class="nav-avatar" />
@@ -108,9 +90,9 @@
 
               <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-paste">
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-                                </i>Forms</a>
+                                </i>University Information</a>
                                     <ul id="togglePages" class="collapse unstyled">
-                                        <li><a href="UniversityInfo.php"><i class="menu-icon icon-paste"></i>University Information </a></li>
+                                        <li><a href="UniversityInfo.php"><i class="menu-icon icon-paste"></i>General Information </a></li>
                                        <li><a href="TeacherInfo.php"><i class="menu-icon icon-paste"></i>Teacher Distribution </a></li>
                                        <li><a href="StudentInfo.php"><i class="menu-icon icon-paste"></i>Student Distribution </a></li>
                                        <li><a href="ResearchPublications.php"><i class="menu-icon icon-paste"></i>Research and Publications </a></li>
@@ -119,7 +101,7 @@
                                     </ul>
                             </li>
               <li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li>
-              <li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Charts </a></li>
+              <li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Graphical Representation </a></li>
                
             </ul>
             <!--/.widget-nav-->

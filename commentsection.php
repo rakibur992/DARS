@@ -1,4 +1,6 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,12 +8,13 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forms</title>
+  <title>Comment Section</title>
   <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
   <link type="text/css" href="css/theme.css" rel="stylesheet">
   <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
   <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -29,7 +32,6 @@
 
         <div class="nav-collapse collapse navbar-inverse-collapse">
           <ul class="nav nav-icons">
-            
             <li><a href="charts.php">
                 <i class="icon-bar-chart"></i>
               </a></li>
@@ -43,7 +45,9 @@
           </form>
 
           <ul class="nav pull-right">
-           
+            
+
+            
             <li class="nav-user dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="images/user.png" class="nav-avatar" />
@@ -84,19 +88,10 @@
 
             <ul class="widget widget-menu unstyled">
 
-              <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-paste">
-                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-                                </i>University Information</a>
-                                    <ul id="togglePages" class="collapse unstyled">
-                                        <li><a href="UniversityInfo.php"><i class="menu-icon icon-paste"></i>General Information </a></li>
-                                        <li><a href="TeacherInfo.php"><i class="menu-icon icon-paste"></i>Teacher Distribution </a><li><a href="StudentInfo.php"><i class="menu-icon icon-paste"></i>Student Distribution </a></li>
-                                        <li><a href="ResearchPublications.php"><i class="menu-icon icon-paste"></i>Research and Publications </a></li>
-                                        <li><a href="Finances.php"><i class="menu-icon icon-paste"></i>Finances </a></li>
-                                        <li><a href="Courses.php"><i class="menu-icon icon-paste"></i>Courses </a></li>
-                                    </ul>
-                            </li>
+             
               <li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li>
               <li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Graphical Representation </a></li>
+               <li><a href="commentsection.php"><i class="menu-icon icon-bar-chart"></i>Comment Section</a></li>
                
             </ul>
             <!--/.widget-nav-->
@@ -124,109 +119,27 @@
 
             <div class="module">
               <div class="module-head">
-                <h3>Research and Publications</h3>
+                <h3>Comment Section</h3>
               </div>
               <div class="module-body">
 
                 <br />
 
-                <form class="form-horizontal row-fluid" action="R&PSQL.php" method="post">
+                <form class="form-horizontal row-fluid">
                   
                   <div class="control-group">
-                    <label class="control-label" for="basicinput">Year</label>
+                    <label class="control-label" for="basicinput">Recipient</label>
                     <div class="controls">
-                      <div class="input-append">
-                        <input type="text" name="Year" placeholder="2018" class="span8">
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="control-group">
-                    <label class="control-label" for="basicinput">Total Number of Research Journal</label>
-                    <div class="controls">
-                      <div class="input-append">
-                        <input type="text" name="ResearchJournals" placeholder="" class="span8">
-                      </div>
+                      <input type="text" id="basicinput" placeholder="To: " class="span8">
                     </div>
                   </div>
 
                  <div class="control-group">
-                    <label class="control-label" for="basicinput">Total Number of Research Project Completed</label>
+                    <label class="control-label" for="basicinput">Message</label>
                     <div class="controls">
-                      <div class="input-append">
-                        <input type="text" name="ResearchProjectCompleted" placeholder="" class="span8">
-                      </div>
+                      <textarea class="span8" rows="5"></textarea>
                     </div>
                   </div>
-
-                 <div class="control-group">
-                    <label class="control-label" for="basicinput">Total Number of Foreign Journals Published</label>
-                    <div class="controls">
-                      <div class="input-append">
-                        <input type="text" name="ForeignJournals" placeholder="" class="span8">
-                      </div>
-                    </div>
-                  </div>
-
-                 <div class="control-group">
-                    <label class="control-label" for="basicinput">Total Number of Local Journals Published</label>
-                    <div class="controls">
-                      <div class="input-append">
-                        <input type="text" name="LocalJournals" placeholder="" class="span8">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="control-group">
-                    <label class="control-label" for="basicinput">Total Number of Peer Reviewed Journals Published</label>
-                    <div class="controls">
-                      <div class="input-append">
-                        <input type="text" name="ReviewedJournals" placeholder="" class="span8">
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- <div class="control-group">
-                    <label class="control-label" for="basicinput">Total Number of Assistant Professors</label>
-                    <div class="controls">
-                      <div class="input-append">
-                        <input type="text" name="AsProfessors" placeholder="" class="span8">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="control-group">
-                    <label class="control-label" for="basicinput">Total Number of Lecturers</label>
-                    <div class="controls">
-                      <div class="input-append">
-                        <input type="text" name="Lecturers" placeholder="" class="span8">
-                      </div>
-                    </div>
-                  </div> -->
-
-                 <!--  <div class="control-group">
-                    <label class="control-label" for="basicinput">University Physical Structure Rented</label>
-                    <div class="controls">
-                      <div class="input-append">
-                        <input type="text" placeholder="5.000" class="span8"><span class="add-on">Acre</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="control-group">
-                    <label class="control-label" for="basicinput">Number of Schools</label>
-                    <div class="controls">
-                      <input type="text" id="basicinput" placeholder="Digits" class="span8">
-                    </div>
-                  </div>
-
-                  <div class="control-group">
-                    <label class="control-label" for="basicinput">Number of Departments</label>
-                    <div class="controls">
-                      <input type="text" id="basicinput" placeholder="Digits" class="span8">
-                    </div>
-                  </div> -->
 
                   <!-- <div class="control-group">
                     <label class="control-label">Inline Checkboxes</label>
@@ -256,7 +169,8 @@
                   <div class="control-group">
                     <br />
                     <div class="controls">
-                      <button type="submit" class="btn">Submit Form</button>
+                      <button type="submit" class="btn">Upload</button>
+                      <button type="submit" class="btn">Send</button>
                     </div>
                     <br/>
                   </div>
