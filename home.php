@@ -46,7 +46,7 @@
                         </button>
                         </form>
                         <ul class="nav pull-right">
-                           
+
 
                             <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="images/user.png" class="nav-avatar" />
@@ -78,7 +78,7 @@
 
 
                             <ul class="widget widget-menu unstyled">
-                                
+
                                 <li class="divider"></li>
                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-paste">
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
@@ -138,7 +138,7 @@
 
                                                     $servername = "localhost";
                                                     $username = "root";
-                                                    $password = "rakib";
+                                                    $password = "";
                                                     $dbname = "dars2.0";
 
                                                     // Create connection

@@ -29,7 +29,7 @@
 
         <div class="nav-collapse collapse navbar-inverse-collapse">
           <ul class="nav nav-icons">
-            
+
              <li><a href="charts.php">
                 <i class="icon-bar-chart"></i>
               </a></li>
@@ -43,9 +43,9 @@
           </form>
 
           <ul class="nav pull-right">
-           
 
-            
+
+
             <li class="nav-user dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="images/user.png" class="nav-avatar" />
@@ -99,7 +99,7 @@
                             </li>
               <li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li>
               <li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Graphical Representation </a></li>
-               
+
             </ul>
             <!--/.widget-nav-->
 
@@ -133,12 +133,12 @@
                 <br />
 
                 <form class="form-horizontal row-fluid" action="FinancesSQL.php" method="post">
-                  
+
                   <div class="control-group">
                     <label class="control-label" for="basicinput">Year</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="Year" placeholder="2018" class="span8">
+                        <input type="text" name="Year" placeholder="2018" id="Fyear" class="span8">
                       </div>
                     </div>
                   </div>
@@ -148,7 +148,7 @@
                     <label class="control-label" for="basicinput">Total Income Own</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="TotalIncome" placeholder="" class="span8">
+                        <input type="text" name="TotalIncome" placeholder="" id="Fincome"class="span8">
                       </div>
                     </div>
                   </div>
@@ -157,7 +157,7 @@
                     <label class="control-label" for="basicinput">Income from Foreign Funds</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="IncomeForeign" placeholder="" class="span8">
+                        <input type="text" name="IncomeForeign" placeholder="" id="Ffincome" class="span8">
                       </div>
                     </div>
                   </div>
@@ -166,7 +166,7 @@
                     <label class="control-label" for="basicinput">Total Expenses</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="TotalExpense" placeholder="" class="span8">
+                        <input type="text" name="TotalExpense" placeholder="" id="Fexpense" class="span8">
                       </div>
                     </div>
                   </div>
@@ -175,7 +175,7 @@
                     <label class="control-label" for="basicinput">Total Expense Education</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="ExpenseEducation" placeholder="" class="span8">
+                        <input type="text" name="ExpenseEducation" placeholder="" id="FExpenseEd" class="span8">
                       </div>
                     </div>
                   </div>
@@ -184,7 +184,7 @@
                     <label class="control-label" for="basicinput">Total Expenses on Research</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="ExpenseResearch" placeholder="" class="span8">
+                        <input type="text" name="ExpenseResearch" placeholder="" id="FExpRes" class="span8">
                       </div>
                     </div>
                   </div>
@@ -193,7 +193,7 @@
                     <label class="control-label" for="basicinput">Total Expenses on Salary</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="ExpenseSalary" placeholder="" class="span8">
+                        <input type="text" name="ExpenseSalary" placeholder="" id="FExpSal" class="span8">
                       </div>
                     </div>
                   </div>
@@ -202,7 +202,7 @@
                     <label class="control-label" for="basicinput">Total Expenses on Scholarship</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="ExpenseScholarship" placeholder="" class="span8">
+                        <input type="text" name="ExpenseScholarship" placeholder="" id="FExpSchol" class="span8">
                       </div>
                     </div>
                   </div>
@@ -211,7 +211,7 @@
                     <label class="control-label" for="basicinput">Total Expenses on Transport</label>
                     <div class="controls">
                      <div class="input-append">
-                        <input type="text" name="ExpenseTransport" placeholder="" class="span8">
+                        <input type="text" name="ExpenseTransport" placeholder="" id="FExpTrans" class="span8">
                       </div>
                     </div>
                   </div>
@@ -220,7 +220,7 @@
                     <label class="control-label" for="basicinput">Total Expenses on Electricity</label>
                     <div class="controls">
                      <div class="input-append">
-                        <input type="text" name="ExpenseElectricity" placeholder="" class="span8">
+                        <input type="text" name="ExpenseElectricity" placeholder="" id="FExpElec" class="span8">
                       </div>
                     </div>
                   </div>
@@ -229,7 +229,7 @@
                     <label class="control-label" for="basicinput">Total Expenses on Infrastructure Maintenance</label>
                     <div class="controls">
                      <div class="input-append">
-                        <input type="text" name="ExpenseInfrastructure" placeholder="" class="span8">
+                        <input type="text" name="ExpenseInfrastructure" placeholder="" id="FExpInf" class="span8">
                       </div>
                     </div>
                   </div>
@@ -238,7 +238,7 @@
                     <label class="control-label" for="basicinput">Total Expenses on Medical</label>
                     <div class="controls">
                     <div class="input-append">
-                        <input type="text" name="ExpenseMedical" placeholder="" class="span8">
+                        <input type="text" name="ExpenseMedical" placeholder="" id="FExpMed" class="span8">
                       </div>
                     </div>
                   </div>
@@ -247,7 +247,7 @@
                     <label class="control-label" for="basicinput">Total Expenses on Miscellenous</label>
                     <div class="controls">
                      <div class="input-append">
-                        <input type="text" name="ExpenseMisc" placeholder="" class="span8">
+                        <input type="text" name="ExpenseMisc" placeholder="" id="FExpMis" class="span8">
                       </div>
                     </div>
                   </div>
@@ -256,7 +256,7 @@
                     <label class="control-label" for="basicinput">Total Expenses on Each Student</label>
                     <div class="controls">
                      <div class="input-append">
-                        <input type="text" name="ExpenseStudent" placeholder="" class="span8">
+                        <input type="text" name="ExpenseStudent" placeholder="" id="FExpStd" class="span8">
                       </div>
                     </div>
                   </div>
@@ -285,7 +285,7 @@
                       </label>
                     </div>
                   </div> -->
-<!-- 
+<!--
                   <div class="control-group">
                     <label class="control-label" for="basicinput">Textarea</label>
                     <div class="controls">
@@ -304,7 +304,7 @@
               </div>
             </div>
 
-           
+
 
 
 

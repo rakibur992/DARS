@@ -3,6 +3,7 @@ $('#year').keyup(function(){
   var year=$('#year').val();
     $.post('search/uniInfoSearch.php',{input:year},function(data){
       var data1= JSON.parse(data);
+      console.log(data);
       $('#uName').val(data1[0].University_Name);
       $('#uAdd').val(data1[0].University_Address);
       $('#uNum').val(data1[0].University_Contact);
@@ -13,6 +14,7 @@ $('#year').keyup(function(){
       $('#uRent').val(data1[0].University_Physical_Structure_rented);
       $('#uNumSchool').val(data1[0].No_Of_Schools);
       $('#uNumDepartment').val(data1[0].Department);
+
     });
 
 });
@@ -69,6 +71,28 @@ $('#RPyear').keyup(function(){
 
 
     });})
+    $('#Fyear').keyup(function(){
+          var finyear1=$('#Fyear').val();
+            $.post('search/Fininfosearch.php',{finput:finyear1},function(dataf){
+              console.log(dataf);
+               var fdata3= JSON.parse(dataf);
+               console.log(dataf);
+                $('#Fincome').val(fdata3[0].Admitted_Student);
+                $('#Ffincome').val(fdata3[0].Female_Student);
+                $('#Fexpense').val(fdata3[0].Total_Student_Studying);
+                $('#FExpenseEd').val(fdata3[0].Total_Female_Student_Studying);
+                $('#FExpRes').val(fdata3[0].Undergraduate_pass);
+                $('#FExpSal').val(fdata3[0].Undergraduate_Hons);
+                $('#FExpSchol').val(fdata3[0].Undergraduate_Passed_Student_Normal);
+                $('#FExpTrans').val(fdata3[0].Undergraduate_Passed_Student_Hons);
+                $('#FExpElec').val(fdata3[0].Undergraduate_Passed_Student_Eng_tech);
+                $('#FExpInf').val(fdata3[0].Graduate_Passed_Student_Normal);
+                $('#FExpMed').val(fdata3[0].Graduate_Passed_Student_Eng_tech);
+                $('#FExpMis').val(fdata3[0].Student_Proverty);
 
+
+            });
+
+    })
 
 });
