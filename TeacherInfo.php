@@ -12,6 +12,8 @@
   <link type="text/css" href="css/theme.css" rel="stylesheet">
   <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
   <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="js/dy_form.js"></script>
 </head>
 
 <body>
@@ -29,7 +31,7 @@
 
         <div class="nav-collapse collapse navbar-inverse-collapse">
           <ul class="nav nav-icons">
-            
+
             <li><a href="charts.php">
                 <i class="icon-bar-chart"></i>
               </a></li>
@@ -43,9 +45,9 @@
           </form>
 
           <ul class="nav pull-right">
-           
 
-           
+
+
             <li class="nav-user dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="images/user.png" class="nav-avatar" />
@@ -99,7 +101,7 @@
                             </li>
               <li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li>
               <li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Graphical Representation </a></li>
-               
+
             </ul>
             <!--/.widget-nav-->
 
@@ -133,12 +135,12 @@
                 <br />
 
                 <form class="form-horizontal row-fluid" action="TeacherInfoSQL.php" method="post">
-                  
+
                   <div class="control-group">
                     <label class="control-label" for="basicinput">Year</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="Year" placeholder="2018" class="span8">
+                        <input type="text" name="Year" placeholder="2018" id="teacheryear" class="span8">
                       </div>
                     </div>
                   </div>
@@ -148,7 +150,7 @@
                     <label class="control-label" for="basicinput">Total Number of Teachers</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="NoOfTeachers" placeholder="" class="span8">
+                        <input type="text" name="NoOfTeachers" placeholder="" id ="NoOfTeachers" class="span8">
                       </div>
                     </div>
                   </div>
@@ -157,7 +159,7 @@
                     <label class="control-label" for="basicinput">Total Number of Adjunct Teachers</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="AdjunctTeachers" placeholder="" class="span8">
+                        <input type="text" name="AdjunctTeachers" placeholder="" id="noofAdjunctteachers" class="span8">
                       </div>
                     </div>
                   </div>
@@ -166,7 +168,7 @@
                     <label class="control-label" for="basicinput">Total Number of PHD Teachers</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="PHD" placeholder="" class="span8">
+                        <input type="text" name="PHD" placeholder="" id="noofPHD" class="span8">
                       </div>
                     </div>
                   </div>
@@ -175,7 +177,7 @@
                     <label class="control-label" for="basicinput">Total Number of Professors</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="Professors" placeholder="" class="span8">
+                        <input type="text" name="Professors" placeholder="" id="noofprof" class="span8">
                       </div>
                     </div>
                   </div>
@@ -184,7 +186,7 @@
                     <label class="control-label" for="basicinput">Total Number of Associate Professors</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="AProfessors" placeholder="" class="span8">
+                        <input type="text" name="AProfessors" placeholder="" id="noofAssocProf" class="span8">
                       </div>
                     </div>
                   </div>
@@ -193,7 +195,7 @@
                     <label class="control-label" for="basicinput">Total Number of Assistant Professors</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="AsProfessors" placeholder="" class="span8">
+                        <input type="text" name="AsProfessors" placeholder="" id="noofassProf"class="span8">
                       </div>
                     </div>
                   </div>
@@ -202,7 +204,7 @@
                     <label class="control-label" for="basicinput">Total Number of Lecturers</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="Lecturers" placeholder="" class="span8">
+                        <input type="text" name="Lecturers" placeholder="" id="noofLect" class="span8">
                       </div>
                     </div>
                   </div>
@@ -247,7 +249,7 @@
                       </label>
                     </div>
                   </div> -->
-<!-- 
+<!--
                   <div class="control-group">
                     <label class="control-label" for="basicinput">Textarea</label>
                     <div class="controls">
@@ -266,7 +268,7 @@
               </div>
             </div>
 
-           
+
 
 
 

@@ -17,5 +17,58 @@ $('#year').keyup(function(){
 
 });
 
+$('#teacheryear').keyup(function(){
+  var teacheryear1=$('#teacheryear').val();
+    $.post('search/teacherinfosearch.php',{tinput:teacheryear1},function(data12){
+      var data2= JSON.parse(data12);
+
+       $('#NoOfTeachers').val(data2[0].Total_Teacher);
+       $('#noofAdjunctteachers').val(data2[0].Total_Teacher_Adjunct);
+       $('#noofPHD').val(data2[0].Total_Teacher_grad_PhD);
+       $('#noofprof').val(data2[0].Professor);
+       $('#noofAssocProf').val(data2[0].Associate_Professor);
+       $('#noofassProf').val(data2[0].Assistant_Professor);
+       $('#noofLect').val(data2[0].Lecturer);
+
+    });})
+$('#stdyear').keyup(function(){
+      var stdyear1=$('#stdyear').val();
+        $.post('search/stdinfosearch.php',{sinput:stdyear1},function(data13){
+          console.log(data13);
+           var data3= JSON.parse(data13);
+
+            $('#stdadmitted').val(data3[0].Admitted_Student);
+            $('#stdfemaleadmitted').val(data3[0].Female_Student);
+            $('#stdstud').val(data3[0].Total_Student_Studying);
+            $('#stfemstud').val(data3[0].Total_Female_Student_Studying);
+            $('#noofstdUND').val(data3[0].Undergraduate_pass);
+            $('#noOFstudUNDhons').val(data3[0].Undergraduate_Hons);
+            $('#stdpassUND').val(data3[0].Undergraduate_Passed_Student_Normal);
+            $('#stdpassHons').val(data3[0].Undergraduate_Passed_Student_Hons);
+            $('#stdpassENG').val(data3[0].Undergraduate_Passed_Student_Eng_tech);
+            $('#stdpassgrad').val(data3[0].Graduate_Passed_Student_Normal);
+            $('#stdpassgradENG').val(data3[0].Graduate_Passed_Student_Eng_tech);
+            $('#povertystd').val(data3[0].Student_Proverty);
+            $('#ffstd').val(data3[0].Student_Freedom_Fighter);
+
+
+        });
+
+});
+$('#RPyear').keyup(function(){
+  var rpyear1=$('#RPyear').val();
+    $.post('search/RPinfosearch.php',{rinput:rpyear1},function(data14){
+      console.log(data14);
+      // var dataRP1= JSON.parse(datarp);
+      //
+      //  $('#noofRP').val(dataRP1[0].Research_Journal);
+      //  $('#RPCom').val(dataRP1[0].Research_Project_Completed);
+      //  $('#forRPpub').val(dataRP1[0].Published_Journal_Foreign);
+      //  $('#locRPpub').val(dataRP1[0].Publish_Journal_Local);
+      //  $('#noofPRPpub').val(dataRP1[0].Publish_Journal_Peer_review);
+
+
+    });})
+
 
 });

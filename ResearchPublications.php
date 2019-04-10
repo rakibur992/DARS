@@ -29,7 +29,7 @@
 
         <div class="nav-collapse collapse navbar-inverse-collapse">
           <ul class="nav nav-icons">
-            
+
             <li><a href="charts.php">
                 <i class="icon-bar-chart"></i>
               </a></li>
@@ -43,7 +43,7 @@
           </form>
 
           <ul class="nav pull-right">
-           
+
             <li class="nav-user dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="images/user.png" class="nav-avatar" />
@@ -97,7 +97,7 @@
                             </li>
               <li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li>
               <li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Graphical Representation </a></li>
-               
+
             </ul>
             <!--/.widget-nav-->
 
@@ -131,12 +131,12 @@
                 <br />
 
                 <form class="form-horizontal row-fluid" action="R&PSQL.php" method="post">
-                  
+
                   <div class="control-group">
                     <label class="control-label" for="basicinput">Year</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="Year" placeholder="2018" class="span8">
+                        <input type="text" name="Year" placeholder="2018" id="RPyear"class="span8">
                       </div>
                     </div>
                   </div>
@@ -146,7 +146,7 @@
                     <label class="control-label" for="basicinput">Total Number of Research Journal</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="ResearchJournals" placeholder="" class="span8">
+                        <input type="text" name="ResearchJournals" placeholder="" id="noofRP"class="span8">
                       </div>
                     </div>
                   </div>
@@ -155,7 +155,7 @@
                     <label class="control-label" for="basicinput">Total Number of Research Project Completed</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="ResearchProjectCompleted" placeholder="" class="span8">
+                        <input type="text" name="ResearchProjectCompleted" placeholder="" id="RPCom"class="span8">
                       </div>
                     </div>
                   </div>
@@ -164,7 +164,7 @@
                     <label class="control-label" for="basicinput">Total Number of Foreign Journals Published</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="ForeignJournals" placeholder="" class="span8">
+                        <input type="text" name="ForeignJournals" placeholder=""id="forRPpub" class="span8">
                       </div>
                     </div>
                   </div>
@@ -173,7 +173,7 @@
                     <label class="control-label" for="basicinput">Total Number of Local Journals Published</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="LocalJournals" placeholder="" class="span8">
+                        <input type="text" name="LocalJournals" placeholder="" id="locRPpub"class="span8">
                       </div>
                     </div>
                   </div>
@@ -182,7 +182,7 @@
                     <label class="control-label" for="basicinput">Total Number of Peer Reviewed Journals Published</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="ReviewedJournals" placeholder="" class="span8">
+                        <input type="text" name="ReviewedJournals" placeholder="" id="noofPRPpub" class="span8">
                       </div>
                     </div>
                   </div>
@@ -245,7 +245,7 @@
                       </label>
                     </div>
                   </div> -->
-<!-- 
+<!--
                   <div class="control-group">
                     <label class="control-label" for="basicinput">Textarea</label>
                     <div class="controls">
@@ -264,7 +264,7 @@
               </div>
             </div>
 
-           
+
 
 
 
