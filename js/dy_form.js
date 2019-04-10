@@ -1,6 +1,17 @@
 $(function(){
 $('#year').keyup(function(){
   var year=$('#year').val();
+  $('#uName').val('');
+  $('#uAdd').val('');
+  $('#uNum').val('');
+  $('#uEmail').val('');
+  $('#uWeb').val('');
+  $('#uLand').val('');
+  $('#uOwn').val('');
+  $('#uRent').val('');
+  $('#uNumSchool').val('');
+  $('#uNumDepartment').val('');
+
     $.post('search/uniInfoSearch.php',{input:year},function(data){
       var data1= JSON.parse(data);
       console.log(data);
@@ -21,6 +32,7 @@ $('#year').keyup(function(){
 
 $('#teacheryear').keyup(function(){
   var teacheryear1=$('#teacheryear').val();
+
     $.post('search/teacherinfosearch.php',{tinput:teacheryear1},function(data12){
       var data2= JSON.parse(data12);
 
