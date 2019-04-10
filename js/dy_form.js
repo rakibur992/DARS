@@ -32,6 +32,13 @@ $('#year').keyup(function(){
 
 $('#teacheryear').keyup(function(){
   var teacheryear1=$('#teacheryear').val();
+  $('#NoOfTeachers').val('');
+  $('#noofAdjunctteachers').val('');
+  $('#noofPHD').val('');
+  $('#noofprof').val('');
+  $('#noofAssocProf').val('');
+  $('#noofassProf').val('');
+  $('#noofLect').val('');
 
     $.post('search/teacherinfosearch.php',{tinput:teacheryear1},function(data12){
       var data2= JSON.parse(data12);
@@ -46,6 +53,21 @@ $('#teacheryear').keyup(function(){
 
     });})
 $('#stdyear').keyup(function(){
+
+  $('#stdadmitted').val('');
+  $('#stdfemaleadmitted').val('');
+  $('#stdstud').val('');
+  $('#stfemstud').val('');
+  $('#noofstdUND').val('');
+  $('#noOFstudUNDhons').val('');
+  $('#stdpassUND').val('');
+  $('#stdpassHons').val('');
+  $('#stdpassENG').val('');
+  $('#stdpassgrad').val('');
+  $('#stdpassgradENG').val('');
+  $('#povertystd').val('');
+  $('#ffstd').val('');
+
       var stdyear1=$('#stdyear').val();
         $.post('search/stdinfosearch.php',{sinput:stdyear1},function(data13){
           console.log(data13);
@@ -70,20 +92,42 @@ $('#stdyear').keyup(function(){
 
 });
 $('#RPyear').keyup(function(){
+  $('#noofRP').val('');
+  $('#RPCom').val('');
+  $('#forRPpub').val('');
+  $('#locRPpub').val('');
+  $('#noofPRPpub').val('');
+
   var rpyear1=$('#RPyear').val();
     $.post('search/RPinfosearch.php',{rinput:rpyear1},function(data14){
       console.log(data14);
-      // var dataRP1= JSON.parse(datarp);
-      //
-      //  $('#noofRP').val(dataRP1[0].Research_Journal);
-      //  $('#RPCom').val(dataRP1[0].Research_Project_Completed);
-      //  $('#forRPpub').val(dataRP1[0].Published_Journal_Foreign);
-      //  $('#locRPpub').val(dataRP1[0].Publish_Journal_Local);
-      //  $('#noofPRPpub').val(dataRP1[0].Publish_Journal_Peer_review);
+       var dataRP1= JSON.parse(datarp);
+
+        $('#noofRP').val(dataRP1[0].Research_Journal);
+        $('#RPCom').val(dataRP1[0].Research_Project_Completed);
+        $('#forRPpub').val(dataRP1[0].Published_Journal_Foreign);
+        $('#locRPpub').val(dataRP1[0].Publish_Journal_Local);
+        $('#noofPRPpub').val(dataRP1[0].Publish_Journal_Peer_review);
 
 
     });})
     $('#Fyear').keyup(function(){
+
+
+      $('#Fincome').val('');
+      $('#Ffincome').val('');
+      $('#Fexpense').val('');
+      $('#FExpenseEd').val('');
+      $('#FExpRes').val('');
+      $('#FExpSal').val('');
+      $('#FExpSchol').val('');
+      $('#FExpTrans').val('');
+      $('#FExpElec').val('');
+      $('#FExpInf').val('');
+      $('#FExpMed').val('');
+      $('#FExpMis').val('');
+
+
           var finyear1=$('#Fyear').val();
             $.post('search/Fininfosearch.php',{finput:finyear1},function(dataf){
               console.log(dataf);
@@ -101,6 +145,44 @@ $('#RPyear').keyup(function(){
                 $('#FExpInf').val(fdata3[0].Graduate_Passed_Student_Normal);
                 $('#FExpMed').val(fdata3[0].Graduate_Passed_Student_Eng_tech);
                 $('#FExpMis').val(fdata3[0].Student_Proverty);
+
+
+            });
+
+    })
+
+    $('#Cyear').keyup(function(){
+
+
+
+      $('#CArts').val('');
+      $('#CSoc').val('');
+      $('#CEdu').val('');
+      $('#CSc').val('');
+      $('#CBs').val('');
+      $('#CLaw').val('');
+      $('#CPharm').val('');
+      $('#CAgri').val('');
+      $('#CEng').val('');
+      $('#CEco').val('');
+
+
+
+          var cinyear1=$('#Cyear').val();
+            $.post('search/Courseininfosearch.php',{cinput:cinyear1},function(datac){
+              console.log(datac);
+               var cdata3= JSON.parse(datac);
+
+                $('#CArts').val(cdata3[0].Arts);
+                $('#CSoc').val(cdata3[0].Sociology);
+                $('#CEdu').val(cdata3[0].Education);
+                $('#CSc').val(cdata3[0].Science	);
+                $('#CBs').val(cdata3[0].Business);
+                $('#CLaw').val(cdata3[0].Law);
+                $('#CPharm').val(cdata3[0].Pharmacy);
+                $('#CAgri').val(cdata3[0].Agriculture);
+                $('#CEng').val(cdata3[0].Engineering_and_Technical);
+                $('#CEco').val(cdata3[0].Economics);
 
 
             });

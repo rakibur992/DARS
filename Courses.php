@@ -29,7 +29,7 @@
 
         <div class="nav-collapse collapse navbar-inverse-collapse">
           <ul class="nav nav-icons">
-            
+
              <li><a href="charts.php">
                 <i class="icon-bar-chart"></i>
               </a></li>
@@ -43,9 +43,9 @@
           </form>
 
           <ul class="nav pull-right">
-           
 
-           
+
+
             <li class="nav-user dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img src="images/user.png" class="nav-avatar" />
@@ -99,7 +99,7 @@
                             </li>
               <li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li>
               <li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Graphical Representation </a></li>
-               
+
             </ul>
             <!--/.widget-nav-->
 
@@ -133,12 +133,12 @@
                 <br />
 
                 <form class="form-horizontal row-fluid" action="coursesSQL.php" method="post">
-                  
+
                   <div class="control-group">
                     <label class="control-label" for="basicinput">Year</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="Year" placeholder="2018" class="span8">
+                        <input type="text" name="Year" placeholder="2018" id="Cyear" class="span8">
                       </div>
                     </div>
                   </div>
@@ -148,7 +148,7 @@
                     <label class="control-label" for="basicinput">Arts</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="Arts" placeholder="" class="span8">
+                        <input type="text" name="Arts" placeholder="" id="CArts" class="span8">
                       </div>
                     </div>
                   </div>
@@ -157,7 +157,7 @@
                     <label class="control-label" for="basicinput">Sociology</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="Sociology" placeholder="" class="span8">
+                        <input type="text" name="Sociology" placeholder="" id="CSoc" class="span8">
                       </div>
                     </div>
                   </div>
@@ -166,7 +166,7 @@
                     <label class="control-label" for="basicinput">Education</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="Education" placeholder="" class="span8">
+                        <input type="text" name="Education" placeholder="" id="CEdu" class="span8">
                       </div>
                     </div>
                   </div>
@@ -175,7 +175,7 @@
                     <label class="control-label" for="basicinput">Science</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="Science" placeholder="" class="span8">
+                        <input type="text" name="Science" placeholder="" id="CSc" class="span8">
                       </div>
                     </div>
                   </div>
@@ -184,7 +184,7 @@
                     <label class="control-label" for="basicinput">Business</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="Business" placeholder="" class="span8">
+                        <input type="text" name="Business" placeholder="" id="CBs" class="span8">
                       </div>
                     </div>
                   </div>
@@ -193,7 +193,7 @@
                     <label class="control-label" for="basicinput">Law</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="Law" placeholder="" class="span8">
+                        <input type="text" name="Law" placeholder="" id="CLaw" class="span8">
                       </div>
                     </div>
                   </div>
@@ -202,7 +202,7 @@
                     <label class="control-label" for="basicinput">Pharmacy</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="Pharmacy" placeholder="" class="span8">
+                        <input type="text" name="Pharmacy" placeholder="" id="CPharm" class="span8">
                       </div>
                     </div>
                   </div>
@@ -211,7 +211,7 @@
                     <label class="control-label" for="basicinput">Agriculture</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="Agriculture" placeholder="" class="span8">
+                        <input type="text" name="Agriculture" placeholder="" id="CAgri" class="span8">
                       </div>
                     </div>
                   </div>
@@ -220,7 +220,7 @@
                     <label class="control-label" for="basicinput">Engineering and Technical</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="Engineering_and_Technical" placeholder="" class="span8">
+                        <input type="text" name="Engineering_and_Technical" placeholder="" id="CEng" class="span8">
                       </div>
                     </div>
                   </div>
@@ -229,7 +229,7 @@
                     <label class="control-label" for="basicinput">Economics</label>
                     <div class="controls">
                       <div class="input-append">
-                        <input type="text" name="Economics" placeholder="" class="span8">
+                        <input type="text" name="Economics" placeholder="" id="CEco" class="span8">
                       </div>
                     </div>
                   </div>
@@ -274,7 +274,7 @@
                       </label>
                     </div>
                   </div> -->
-<!-- 
+<!--
                   <div class="control-group">
                     <label class="control-label" for="basicinput">Textarea</label>
                     <div class="controls">
@@ -293,7 +293,7 @@
               </div>
             </div>
 
-           
+
 
 
 
