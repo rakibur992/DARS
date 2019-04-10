@@ -138,7 +138,7 @@
 
                                                     $servername = "localhost";
                                                     $username = "root";
-                                                    $password = "";
+                                                    $password = "rakib";
                                                     $dbname = "dars2.0";
 
                                                     // Create connection

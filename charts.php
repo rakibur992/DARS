@@ -30,6 +30,7 @@
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 
 <script type="text/javascript" src="js/dy_chart_gen.js"></script>
+ <script src="print.js"></script>
 </head>
 <body>
 
@@ -366,6 +367,7 @@
 
                     </div>
                     <!--/.content-->
+                      <button type="button" class="btn" onclick="window.print();">Print PDF</button>
                 </div>
                 <!--/.span9-->
             </div>
