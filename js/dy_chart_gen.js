@@ -6,6 +6,10 @@ gen_pie1();
 gen_bar3();
 gen_pie2();
   subjectbar();
+  resline();
+
+
+
 //function for total student studying
 function gen_bar1(){
   var year=$('#year1 option:selected').val();
@@ -25,6 +29,21 @@ function gen_bar1(){
    });
 
 }
+function resline(){
+  var uni1=$('#ResSel option:selected').val();
+
+
+  $.post('chart/RESline1.php',{resuni2:uni1,},function(dataR,year){
+    console.log(dataR);
+    console.log(year);
+        var resdata=JSON.parse(dataR,year);
+        var resuniYear=resdata.year;
+        var resuni2Data=resdata.dataR;
+       reslineChart(resuniYear,resuni2Data);
+   });
+
+};
+
 //function Growth of Admitted Student
 function gen_line1(){
   var uni1=$('#selUni1 option:selected').val();
@@ -69,7 +88,7 @@ function gen_bar3(){
   $.post('chart/bar3.php',{year1:selyear},function(bar_data){
 
       var data=JSON.parse(bar_data);
-      console.log(data);
+      //console.log(data);
 
       barChart3(data.University_Name,data.Expense_Scholarship);
 
@@ -97,7 +116,7 @@ function subjectbar(){
   $.post('chart/subjectdistribution.php',{yearsubject:subyear,uni1subject:subUni},function(subject_data){
 
       var subjectdata=JSON.parse(subject_data);
-      console.log(subject_data);
+      //console.log(subject_data);
 
       subjectdistribution(subjectdata);
 
@@ -155,7 +174,36 @@ function subjectbar(){
   });
   $('#subjectuni1').change(function(){
     subjectbar();
-  })
+  });
+  $('#selbar3').change(function(){
+    resline();
+  });
+
+  function reslineChart(resuniYear,resuni2Data){
+    $("canvas#myRESLineChart3").remove();
+    $("div#res").append('<canvas id="myRESLineChart3"  width="400" height="300"></canvas>');
+
+    var ctx = document.getElementById('myRESLineChart3').getContext('2d');
+    var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: resuniYear ,
+            datasets: [{
+                label: 'Research Completed',
+                data: resuni2Data,
+                fill: false,
+                borderColor: [
+                    'rgba(255, 99, 132, 1)'
+                ]},
+                ],
+        },
+        options: {
+          //add
+        }
+    });
+
+  }
+
 // print bar1 chart
   function barChart1(bar1,bar2){
     $("canvas#myChart").remove();
@@ -318,12 +366,8 @@ function subjectbar(){
     var myPieChart = new Chart(ctx, {
         type: 'pie',
         data: {
-            labels: ['Female Student','Undergraduate pass'
-                      ,'Undergraduate Hons','Undergraduate Passed Student Normal'
-                      ,'Undergraduate Passed Student Hons','Undergraduate Passed Student Eng tech'
-                      ,'Graduate Passed Student Normal','Graduate Passed Student Eng tech'
-                      ,'Student Poverty'
-                      ,'Student Freedom Fighter'],
+            labels: ['Female Student','Male Student'
+                      ],
             datasets: [{
                 data: piedata,
                 backgroundColor: [
@@ -462,7 +506,7 @@ function subjectbar(){
                       ,'Transport'
                       ,'Electricity','Medical'
                       ,'Misc'
-                      ,'Per Student'
+
                       ,'Infrustructure&Maintainence'],
             datasets: [{
                 data: datadoughnut,
