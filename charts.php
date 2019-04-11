@@ -30,6 +30,10 @@
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 
 <script type="text/javascript" src="js/dy_chart_gen.js"></script>
+<script type="text/javascript" src="js/printPDF.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js">
+
+</script>
  <script src="print.js"></script>
 </head>
 <body>
@@ -41,7 +45,7 @@
                     <i class="icon-reorder shaded"></i></a><a class="brand" href="home.php">DARS </a>
                 <div class="nav-collapse collapse navbar-inverse-collapse">
                     <ul class="nav nav-icons">
-                        
+
                         <li><a href="charts.php"><i class="icon-bar-chart"></i></a></li>
                     </ul>
                     <form class="navbar-search pull-left input-append" action="#">
@@ -51,8 +55,8 @@
                     </button>
                     </form>
                     <ul class="nav pull-right">
-                        
-                       
+
+
                         <li class="nav-user dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="images/user.png" class="nav-avatar" />
                             <b class="caret"></b></a>
@@ -114,7 +118,7 @@
                 </div>
                 <!--/.span3-->
                 <div class="span9">
-                    <div class="content">
+                    <div class="content" id="pdfgen">
                         <div class="module" id="bar1">
                             <div class="module-head">
                                 <h2>Total Number of Student Studying </h2>
@@ -307,67 +311,10 @@
 
                         <!--/.module-->
                         <br />
-                        <div class="module">
-                            <div class="module-head">
-                                <h3></h3>
-
-                            </div>
-
-                            // code
-
-                        </div>
-                        <!--/.module-->
-                        <br />
-                        <div class="module">
-                            <div class="module-head">
-                                <h3>
-                                    Pie - Default6</h3>
-                            </div>
-
-                            // code
-
-                        </div>
-
-                        <!--/.module-->
-                        <br />
-                        <div class="module">
-                            <div class="module-head">
-                                <h3>
-                                    Pie - Default2</h3>
-                            </div>
-
-                            // code
-
-                        </div>
-
-                        <!--/.module-->
-                        <br />
-                        <div class="module">
-                            <div class="module-head">
-                                <h1></h1>
-                            </div>
-
-                            // code
-
-                        </div>
-
-                        <!--/.module-->
-                        <br />
-                        <div class="module">
-                            <div class="module-head">
-                                <h3>
-                                    Pie - Default3</h3>
-                            </div>
-
-                            // code
-
-                        </div>
-
-                        <!--/.module-->
 
                     </div>
                     <!--/.content-->
-                      <button type="button" class="btn" onclick="window.print();">Print PDF</button>
+                      <button type="button" class="btn" id="pdf" >Print PDF</button>
                 </div>
                 <!--/.span9-->
             </div>
