@@ -269,36 +269,17 @@
 
                         <!--/.module-->
                         <br />
-                        <div class="module">
+                        <div class="module" id ="res">
                             <div class="module-head">
                                 <h2>Research Project Completed over the years</h2>
 
                                       <label>Select University name </label>
-                                      <select name ="sel1" onchange="this.form.submit">
+                                      <select name ="sel1" id= "ResSel"onchange="this.form.submit">
                                      <?php echo $option1; ?>
                                       </select>
                             </div>
-                            <canvas id="myLineChart3" width="400" height="200"></canvas>
-                            <script>
-                            var ctx = document.getElementById('myLineChart3').getContext('2d');
-                            var myLineChart2 = new Chart(ctx, {
-                                type: 'line',
-                                data: {
-                                    labels: <?php print json_encode($u_yearP); ?>,
-                                    datasets: [{
-                                        label: 'Income',
-                                        data: <?php print json_encode($u_Project); ?>,
-                                        fill: false,
-                                        borderColor: [
-                                            'rgba(255, 99, 132, 1)'
-                                        ]},
-                                        ],
-                                },
-                                options: {
-                                  //add
-                                }
-                            });
-                            </script>
+                            <canvas id="myRESLineChart3" width="400" height="200"></canvas>
+                            
 
                         </div>
 
