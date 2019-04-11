@@ -78,6 +78,37 @@ blockquote small::before {
 	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 	padding: 30px 0
 }
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #pdfgen, #bar1 * ,#header1 *,#bar3 *, #line1 *,# line2 *,# pie1 *,#doughnut  *,#subjectchart  *,#bar3 * {
+    visibility: visible;
+  }
+  #header1 {
+    position: absolute;
+    left: 10px;
+    top: 0px;
+  }
+
+#bar1{
+  position: absolute;
+  left: 70px;
+  top:200px;
+}
+
+#bar3{
+  position: absolute;
+  left: 70px;
+  top:200px;
+}
+
+
+}
+
+
+
 .footer {
 	color: #999;
 	padding: 30px 0 60px

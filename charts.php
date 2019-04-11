@@ -30,11 +30,11 @@
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 
 <script type="text/javascript" src="js/dy_chart_gen.js"></script>
-<script type="text/javascript" src="js/printPDF.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js">
+<script type="text/javascript" src="js/print.js"></script>
 
-</script>
- <script src="print.js"></script>
+
+
+
 </head>
 <body>
 
@@ -119,7 +119,12 @@
                 <!--/.span3-->
                 <div class="span9">
                     <div class="content" id="pdfgen">
+                      <div id="header1">
+                        <img src="images/header.jpg">
+                      </div>
+
                         <div class="module" id="bar1">
+
                             <div class="module-head">
                                 <h2>Total Number of Student Studying </h2>
 
@@ -318,7 +323,7 @@
 
                     </div>
                     <!--/.content-->
-                      <button type="button" class="btn" id="pdf" >Print PDF</button>
+                      <button type="button" class="btn" onclick="window.print();">Print PDF</button>
                 </div>
                 <!--/.span9-->
             </div>
