@@ -97,7 +97,7 @@
                                         <li><a href="Courses.php"><i class="menu-icon icon-paste"></i>Subjects </a></li>
                                     </ul>
                             </li>
-              <li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li>
+              <!-- <li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li> -->
               <li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Graphical Representation </a></li>
                
             </ul>
