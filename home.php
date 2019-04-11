@@ -82,17 +82,17 @@
                                 <li class="divider"></li>
                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-paste">
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-                                </i>University Information</a>
+                                </i>Information Input</a>
                                     <ul id="togglePages" class="collapse unstyled">
-                                        <li><a href="UniversityInfo.php"><i class="menu-icon icon-paste"></i>General Information </a></li>
+                                        <li><a href="UniversityInfo.php"><i class="menu-icon icon-paste"></i>University Information </a></li>
                                         <li><a href="TeacherInfo.php"><i class="menu-icon icon-paste"></i>Teacher Distribution </a></li>
                                        <li><a href="StudentInfo.php"><i class="menu-icon icon-paste"></i>Student Distribution </a></li>
                                        <li><a href="ResearchPublications.php"><i class="menu-icon icon-paste"></i>Research and Publications </a></li>
                                        <li><a href="Finances.php"><i class="menu-icon icon-paste"></i>Finances </a></li>
-                                       <li><a href="Courses.php"><i class="menu-icon icon-paste"></i>Courses </a></li>
+                                       <li><a href="Courses.php"><i class="menu-icon icon-paste"></i>Subjects </a></li>
                                     </ul>
                             </li>
-                                <li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li>
+                                <!-- <li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li> -->
                                 <li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Graphical Representation </a></li>
                             </ul>
 
@@ -138,7 +138,7 @@
 
                                                     $servername = "localhost";
                                                     $username = "root";
-                                                    $password = "";
+                                                    $password = "rakib";
                                                     $dbname = "dars2.0";
 
                                                     // Create connection
@@ -177,7 +177,7 @@
                         </div>
                     </div>
 
-                    <div class="module">
+                   <!--  <div class="module">
                                 <div class="module-head">
                                     <h3>
                                         Profit Chart</h3>
@@ -208,7 +208,7 @@
                                     </div>
                                 </div>
                             </div>
-
+ -->
 
 
         <!--/.wrapper-->

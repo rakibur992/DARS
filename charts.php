@@ -30,6 +30,7 @@
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 
 <script type="text/javascript" src="js/dy_chart_gen.js"></script>
+ <script src="print.js"></script>
 </head>
 <body>
 
@@ -88,9 +89,9 @@
 
                                <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-paste">
                                 </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
-                                </i>University Information</a>
+                                </i>Information Input</a>
                                     <ul id="togglePages" class="collapse unstyled">
-                                        <li><a href="UniversityInfo.php"><i class="menu-icon icon-paste"></i>General Information </a></li>
+                                        <li><a href="UniversityInfo.php"><i class="menu-icon icon-paste"></i>University Information </a></li>
                                         <li><a href="TeacherInfo.php"><i class="menu-icon icon-paste"></i>Teacher Distribution </a></li>
                                        <li><a href="StudentInfo.php"><i class="menu-icon icon-paste"></i>Student Distribution </a></li>
                                        <li><a href="ResearchPublications.php"><i class="menu-icon icon-paste"></i>Research and Publications </a></li>
@@ -98,7 +99,7 @@
                                        <li><a href="Courses.php"><i class="menu-icon icon-paste"></i>Courses </a></li>
                                     </ul>
                             </li>
-                                <li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li>
+                                <!-- <li><a href="table.php"><i class="menu-icon icon-table"></i>Tables </a></li> -->
                                 <li><a href="charts.php"><i class="menu-icon icon-bar-chart"></i>Graphical Representation </a></li>
                             </ul>
 
@@ -194,6 +195,10 @@
                             <canvas id="myPieChart1" width="300" height="250"></canvas>
 
                         </div>
+
+                        <br/>
+
+
 
 
                         <!--/.module-->
@@ -306,13 +311,24 @@
 
                         <!--/.module-->
                         <br />
-                        <div class="module">
+                       <div class="module" id="pie3">
                             <div class="module-head">
-                                <h3></h3>
-
+                                <h1>Faculty Distribution</h1>
+                                <div>
+                                     <label>Select Year </label>
+                                     <select id='sel1pie3'>
+                                    <?php echo $option2; ?>
+                                     </select>
+                            <div class="form2">
+                                 <label>Select University </label>
+                                 <select id="sel2pie3" >
+                                <?php echo $option1; ?>
+                                 </select>
+                        </div>
+                            </div>
                             </div>
 
-                            // code
+                            <canvas id="myPieChart3" width="300" height="250"></canvas>
 
                         </div>
                         <!--/.module-->
@@ -366,6 +382,7 @@
 
                     </div>
                     <!--/.content-->
+                      <button type="button" class="btn" onclick="window.print();">Print PDF</button>
                 </div>
                 <!--/.span9-->
             </div>

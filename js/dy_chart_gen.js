@@ -549,4 +549,15 @@ function subjectbar(){
           }
       });
 
+      var canvas = $("#myChart").get(0);
+      var dataURL = canvas.toDataURL();
+      //console.log(dataURL);
+
+      $("#exportButton").click(function(){
+          var pdf = new jsPDF();
+          pdf.addImage(dataURL, 'JPEG', 0, 0);
+          pdf.save("download.pdf");
+      });
+
+
     }
