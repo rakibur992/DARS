@@ -83,7 +83,7 @@ blockquote small::before {
   body * {
     visibility: hidden;
   }
-  #pdfgen, #bar1 * ,#header1 *,#bar3 *, #line1 *,# line2 *,# pie1 *,#doughnut  *,#subjectchart  *,#bar3 * {
+  #pdfgen, #bar1 * ,#header1 *  ,#line1 * ,#line2 * ,#pie1 * ,#doughnut  * ,#subjectchart * ,#res *,#bar3 * {
     visibility: visible;
   }
   #header1 {
@@ -98,11 +98,55 @@ blockquote small::before {
   top:200px;
 }
 
+#line1{
+  position: absolute;
+  left: 70px;
+  top:1600px;
+
+
+}
+
+#line2{
+  position: absolute;
+  left: 70px;
+  top:3100px;
+
+}
+
+#pie1{
+  position: absolute;
+  left: 70px;
+  top:4700px;
+
+}
+
+#doughnut{
+  position: absolute;
+  left: 70px;
+  top:6200px;
+
+}
+
+#subjectchart{
+  position: absolute;
+  left: 70px;
+  top:7700px;
+}
+
+#res{
+  position: absolute;
+  left: 70px;
+  top:9300px;
+}
+
 #bar3{
   position: absolute;
   left: 70px;
-  top:200px;
+  top:10800px;
 }
+
+
+
 
 
 }
