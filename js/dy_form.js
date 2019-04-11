@@ -14,7 +14,7 @@ $('#year').keyup(function(){
 
     $.post('search/uniInfoSearch.php',{input:year},function(data){
       var data1= JSON.parse(data);
-      console.log(data);
+
       $('#uName').val(data1[0].University_Name);
       $('#uAdd').val(data1[0].University_Address);
       $('#uNum').val(data1[0].University_Contact);
@@ -70,7 +70,7 @@ $('#stdyear').keyup(function(){
 
       var stdyear1=$('#stdyear').val();
         $.post('search/stdinfosearch.php',{sinput:stdyear1},function(data13){
-          console.log(data13);
+
            var data3= JSON.parse(data13);
 
             $('#stdadmitted').val(data3[0].Admitted_Student);
@@ -100,7 +100,7 @@ $('#RPyear').keyup(function(){
 
   var rpyear1=$('#RPyear').val();
     $.post('search/RPinfosearch.php',{rinput:rpyear1},function(data14){
-      console.log(data14);
+
        var dataRP1= JSON.parse(datarp);
 
         $('#noofRP').val(dataRP1[0].Research_Journal);
@@ -130,9 +130,9 @@ $('#RPyear').keyup(function(){
 
           var finyear1=$('#Fyear').val();
             $.post('search/Fininfosearch.php',{finput:finyear1},function(dataf){
-              console.log(dataf);
+
                var fdata3= JSON.parse(dataf);
-               console.log(dataf);
+
                 $('#Fincome').val(fdata3[0].Admitted_Student);
                 $('#Ffincome').val(fdata3[0].Female_Student);
                 $('#Fexpense').val(fdata3[0].Total_Student_Studying);
@@ -170,7 +170,7 @@ $('#RPyear').keyup(function(){
 
           var cinyear1=$('#Cyear').val();
             $.post('search/Courseininfosearch.php',{cinput:cinyear1},function(datac){
-              console.log(datac);
+            
                var cdata3= JSON.parse(datac);
 
                 $('#CArts').val(cdata3[0].Arts);

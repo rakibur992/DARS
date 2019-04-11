@@ -5,10 +5,8 @@ gen_line2();
 gen_pie1();
 gen_bar3();
 gen_pie2();
-  subjectbar();
-  resline();
-
-
+subjectbar();
+resline();
 
 //function for total student studying
 function gen_bar1(){
@@ -32,14 +30,14 @@ function gen_bar1(){
 function resline(){
   var uni1=$('#ResSel option:selected').val();
 
+  $.post('chart/RESline1.php',{resuni2:uni1,},function(data){
 
-  $.post('chart/RESline1.php',{resuni2:uni1,},function(dataR,year){
-    console.log(dataR);
-    console.log(year);
-        var resdata=JSON.parse(dataR,year);
+        var resdata=JSON.parse(data);
+        console.log(resdata);
         var resuniYear=resdata.year;
-        var resuni2Data=resdata.dataR;
-       reslineChart(resuniYear,resuni2Data);
+        var resuni2Data=resdata.data;
+        reasearchLine(resuniYear,resuni2Data);
+
    });
 
 };
@@ -88,9 +86,10 @@ function gen_bar3(){
   $.post('chart/bar3.php',{year1:selyear},function(bar_data){
 
       var data=JSON.parse(bar_data);
-      //console.log(data);
+      var uniName =data.University_Name;
+      var uniScola =data.Expense_Scholarship;
 
-      barChart3(data.University_Name,data.Expense_Scholarship);
+      barChart3(uniName,uniScola);
 
    });
 
@@ -102,7 +101,7 @@ function gen_pie2(){
   $.post('chart/expensedonut.php',{yearexp1:selyear,uni1exp1:selUni},function(doughnut_data){
 
       var datadoughnut=JSON.parse(doughnut_data);
-      //console.log(doughnut_data);
+
 
       doughnutchart(datadoughnut);
 
@@ -116,7 +115,7 @@ function subjectbar(){
   $.post('chart/subjectdistribution.php',{yearsubject:subyear,uni1subject:subUni},function(subject_data){
 
       var subjectdata=JSON.parse(subject_data);
-      //console.log(subject_data);
+
 
       subjectdistribution(subjectdata);
 
@@ -175,32 +174,33 @@ function subjectbar(){
   $('#subjectuni1').change(function(){
     subjectbar();
   });
-  $('#selbar3').change(function(){
+  $('#ResSel').change(function(){
     resline();
   });
 
-  function reslineChart(resuniYear,resuni2Data){
+  function reasearchLine(resuniYear,resuni2Data){
     $("canvas#myRESLineChart3").remove();
     $("div#res").append('<canvas id="myRESLineChart3"  width="400" height="300"></canvas>');
-
     var ctx = document.getElementById('myRESLineChart3').getContext('2d');
-    var myLineChart = new Chart(ctx, {
+    var myRESLineChart3 = new Chart(ctx, {
         type: 'line',
         data: {
             labels: resuniYear ,
             datasets: [{
-                label: 'Research Completed',
+                label: 'Research Project Completed',
                 data: resuni2Data,
                 fill: false,
                 borderColor: [
-                    'rgba(255, 99, 132, 1)'
-                ]},
+                    'rgba(28, 221, 1, 1)'
+                ]}
                 ],
         },
         options: {
           //add
         }
     });
+
+
 
   }
 
@@ -496,7 +496,7 @@ function subjectbar(){
 });
   function doughnutchart(datadoughnut){
     $("canvas#mydoughnutChart").remove();
-    $("div#doughnut").append('<canvas id="mydoughnutChart"  width="400" height="250"></canvas>')
+    $("div#doughnut").append('<canvas id="mydoughnutChart"  width="400" height="300"></canvas>')
 
     var ctx = document.getElementById('mydoughnutChart').getContext('2d');
     var mydoughnutChart = new Chart(ctx, {
@@ -595,13 +595,6 @@ function subjectbar(){
 
       var canvas = $("#myChart").get(0);
       var dataURL = canvas.toDataURL();
-      //console.log(dataURL);
-
-      $("#exportButton").click(function(){
-          var pdf = new jsPDF();
-          pdf.addImage(dataURL, 'JPEG', 0, 0);
-          pdf.save("download.pdf");
-      });
 
 
     }

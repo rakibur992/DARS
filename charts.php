@@ -30,10 +30,6 @@
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 
 <script type="text/javascript" src="js/dy_chart_gen.js"></script>
-<script type="text/javascript" src="js/print.js"></script>
-
-
-
 
 </head>
 <body>
@@ -235,7 +231,7 @@
                             </div>
 
                             </div>
-                            <canvas id="mydoughnutChart" width="400" height="250"></canvas>
+                            <canvas id="mydoughnutChart" width="400" height="300"></canvas>
 
                         </div>
 
@@ -274,12 +270,12 @@
                                 <h2>Research Project Completed over the years</h2>
 
                                       <label>Select University name </label>
-                                      <select name ="sel1" id= "ResSel"onchange="this.form.submit">
+                                      <select name ="sel1" id= "ResSel">
                                      <?php echo $option1; ?>
                                       </select>
                             </div>
                             <canvas id="myRESLineChart3" width="400" height="200"></canvas>
-                            
+
 
                         </div>
 
